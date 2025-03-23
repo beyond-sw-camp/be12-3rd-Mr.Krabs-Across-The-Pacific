@@ -31,7 +31,10 @@ pipeline {
                             },
                             "checkout": {
                                 "branch": "main"
-                            }
+                            },
+                            "parameters": {
+                                "docker_tag": "$DOCKER_TAG"
+                            },
                         }' | jq -r '.id'
                     """, returnStdout: true).trim()
 
