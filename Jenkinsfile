@@ -6,37 +6,64 @@ pipeline {
         IMAGE_TAG = "0.${BUILD_NUMBER}"
         GITHUB_REPO = 'https://github.com/celarim/jenkins_test'
         NAMESPACE = 'kgj'
+        GIT_DEPLOYMENT_YAML = 'https://raw.githubusercontent.com/beyond-sw-camp/be12-3rd-Mr.Krabs-Across-The-Pacific/refs/heads/feat/cicd/jenkins/k8s/backend-deployment.yml'
+        GIT_SERVICE_YAML = 'https://raw.githubusercontent.com/beyond-sw-camp/be12-3rd-Mr.Krabs-Across-The-Pacific/refs/heads/feat/cicd/jenkins/k8s/backend-service.yml'
+        CIRCLECI_PROJECT_SLUG =
+        CIRCLECI_TOKEN =
+        CIRCLECI_DEFINITION_ID =
     }
 
     stages {
-		stage('Git Clone') {
-			steps{
-				echo "Cloneing Repository"
-                git branch: 'main', url: 'https://github.com/celarim/jenkins_test'
-            }
-        }
-        stage('Gradle Build') {
-			steps{
-				echo "Add Permission"
-                sh 'chmod +x gradlew'
+		stage('Trigger CircleCI Pipeline') {
+            steps {
+                script {
+                    echo "Starting CircleCI Pipeline..."
 
-                echo "Build"
-                sh './gradlew bootJar'
-            }
-        }
-        stage('Build Docker Image') {
-			steps {
-				script {
-					docker.build("${IMAGE_NAME}:${IMAGE_TAG}")
+                    // CircleCI 파이프라인 실행 및 ID 가져오기
+                    def pipeline_id = sh(script: """
+                        curl --silent --location 'https://circleci.com/api/v2/project/$CIRCLECI_PROJECT_SLUG/pipeline/run' \
+                        --header 'Circle-Token: $CIRCLECI_TOKEN' \
+                        --header 'Content-Type: application/json' \
+                        --data '{
+                            "definition_id": "$CIRCLECI_DEFINITION_ID",
+                            "config": {
+                                "branch": "main"
+                            },
+                            "checkout": {
+                                "branch": "main"
+                            }
+                        }' | jq -r '.id'
+                    """, returnStdout: true).trim()
+
+                    echo "Triggered CircleCI Pipeline ID: ${pipeline_id}"
+                    env.PIPELINE_ID = pipeline_id
                 }
             }
         }
-        stage('Push to Registry') {
-			steps {
-				script {
-					withDockerRegistry([credentialsId: 'DOCKER_HUB']) {
-						docker.image("${IMAGE_NAME}:${IMAGE_TAG}").push()
+
+        stage('Wait for CircleCI Completion') {
+            steps {
+                script {
+                    echo "Waiting for CircleCI Pipeline to Complete..."
+
+                    def status = "running"
+                    while (status == "running" || status == "pending") {
+                        sleep(10) // 10초 대기 후 다시 확인
+
+                        status = sh(script: """
+                            curl --silent --location 'https://circleci.com/api/v2/pipeline/${env.PIPELINE_ID}/workflow' \
+                            --header 'Circle-Token: $CIRCLECI_TOKEN' | jq -r '.items[0].status'
+                        """, returnStdout: true).trim()
+
+                        echo "CircleCI Pipeline Status: ${status}"
                     }
+
+                    // 실패 또는 취소된 경우 빌드 중단
+                    if (status != "success") {
+                        error "CircleCI Pipeline Failed or Canceled! Status: ${status}"
+                    }
+
+                    echo "CircleCI Pipeline Completed Successfully!"
                 }
             }
         }
@@ -53,9 +80,6 @@ pipeline {
                 }
             }
         }
-
-
-
         stage('SSH') {
 			steps{
 				script{
@@ -66,45 +90,29 @@ pipeline {
                                 verbose: true,
                                 transfers: [
                                     sshTransfer(
-                                        sourceFiles: 'k8s/backend-deployment.yml',
-                                        remoteDirectory: '/',
-                                        execCommand: '''
-                                            sed -i "s/latest/0.$BUILD_ID/g" k8s/backend-deployment.yml
-                                        '''
+                                        execCommand: """
+                                            curl -sL $GIT_DEPLOYMENT_YAML | \
+                                            sed "s/borg/${env.BORG}/g" | \
+                                            sed "s/latest/0.$BUILD_ID/g" | \
+                                            kubectl apply -n $NAMESPACE -f -
+                                        """
                                     ),
                                     sshTransfer(
-                                        sourceFiles: 'k8s/backend-deployment.yml',
-                                        remoteDirectory: '/',
-                                        execCommand: '''
-                                            sed -i "s/borg/$BORG/g" k8s/backend-deployment.yml
-                                        '''
+                                        execCommand: """
+                                            kubectl wait --for=condition=available deployment/backend-${env.BORG} --timeout=120s
+                                        """
                                     ),
                                     sshTransfer(
-                                        execCommand: '''
-                                            kubectl apply -f /home/test/k8s/backend-deployment.yml -n $NAMESPACE
-                                        '''
-                                    ),
-                                    sshTransfer(
-                                        execCommand: '''
-                                            kubectl wait --for=condition=available deployment/backend-$BORG --timeout=120s
-                                        '''
-                                    ),
-                                    sshTransfer(
-                                        sourceFiles: 'k8s/backend-service.yml',
-                                        remoteDirectory: '/',
-                                        execCommand: '''
-                                            sed -i "s/borg/$BORG/g" k8s/backend-service.yml
-                                        '''
-                                    ),
-                                    sshTransfer(
-                                        execCommand: '''
-                                            kubectl patch service back-svc -n $NAMESPACE -p '{\"spec\": {\"selector\": {\"deployment\": \"$NOTBORG\"}}}'
-                                        '''
+                                        execCommand: """
+                                            curl -sL $GIT_SERVICE_YAML | \
+                                            sed "s/borg/${env.BORG}/g" | \
+                                            kubectl apply -n $NAMESPACE -f -
+                                        """
                                     ),
 									sshTransfer(
-                                        execCommand: '''
-                                            kubectl scale deployment backend-green --replicas=0 -n $NAMESPACE
-                                        '''
+                                        execCommand: """
+                                            kubectl scale deployment backend-${env.NOTBORG} --replicas=0 -n $NAMESPACE
+                                        """
                                     ),
                                 ]
                             )
