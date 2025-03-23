@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-borg
+  namespace: kgj
+spec:
+  selector:
+    matchLabels:
+      type: backend
+      deployment: borg
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        type: backend
+        deployment: borg
+    spec:
+      containers:
+        - name: backend
+          image: k6kjun/backend:0.latest

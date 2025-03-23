@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: kgj
+  name: backend-svc
+spec:
+  selector:
+    type: backend
+    deployment: borg
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: LoadBalancer
