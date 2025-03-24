@@ -5,8 +5,7 @@ pipeline {
         GITHUB_REPO = 'https://github.com/celarim/jenkins_test'
         NAMESPACE = 'kgj'
         GIT_DEPLOYMENT_YAML = 'https://raw.githubusercontent.com/beyond-sw-camp/be12-3rd-Mr.Krabs-Across-The-Pacific/refs/heads/feat/cicd/jenkins/k8s/backend-deployment.yml'
-        GIT_SERVICE_YAML = 'https://raw.githubusercontent.com/beyond-sw-camp/be12-3rd-Mr.Krabs-Across-The-Pacific/refs/heads/feat/cicd/jenkins/k8s/backend-service.yml'
-        CIRCLECI_PROJECT_SLUG =
+        GIT_SERVICE_YAML = 'https://raw.githubusercontent.com/beyond-sw-camp/be12-3rd-Mr.Krabs-Across-The-Pacific/refs/heads/feat/cicd/jenkins/k8s/backend-service.yml'        CIRCLECI_PROJECT_SLUG = ''
         CIRCLECI_TOKEN =
         CIRCLECI_DEFINITION_ID =
     }
@@ -31,7 +30,7 @@ pipeline {
                                 "branch": "main"
                             },
                             "parameters": {
-                                "docker_tag": "$DOCKER_TAG"
+                                "docker_tag": "$BUILD_ID"
                             },
                         }' | jq -r '.id'
                     """, returnStdout: true).trim()
@@ -94,7 +93,7 @@ pipeline {
                                         execCommand: """
                                             curl -sL $GIT_DEPLOYMENT_YAML | \
                                             sed "s/borg/${env.BORG}/g" | \
-                                            sed "s/latest/0.$BUILD_ID/g" | \
+                                            sed "s/latest/$BUILD_ID/g" | \
                                             kubectl apply -n $NAMESPACE -f -
                                         """
                                     ),
