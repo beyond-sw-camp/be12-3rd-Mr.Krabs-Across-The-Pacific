@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: celarim/atpback:0.latest
+          image: k6kjun/atpback:latest
           envFrom:
             - configMapRef:
                 name: back-cm

@@ -18,20 +18,20 @@ pipeline {
 
                     // CircleCI 파이프라인 실행 및 ID 가져오기
                     def pipeline_id = sh(script: """
-                        curl --silent --location 'https://circleci.com/api/v2/project/$CIRCLECI_PROJECT_SLUG/pipeline/run' \
+                        curl -X POST 'https://circleci.com/api/v2/project/$CIRCLECI_PROJECT_SLUG/pipeline/run' \
                         --header 'Circle-Token: $CIRCLECI_TOKEN' \
                         --header 'Content-Type: application/json' \
                         --data '{
                             "definition_id": "$CIRCLECI_DEFINITION_ID",
                             "config": {
-                                "branch": "main"
+                                "branch": "circleci-project-setup"
                             },
                             "checkout": {
-                                "branch": "main"
+                                "branch": "circleci-project-setup"
                             },
                             "parameters": {
-                                "docker_tag": "$BUILD_ID"
-                            },
+                                "tag": "$BUILD_ID"
+                            }
                         }' | jq -r '.id'
                     """, returnStdout: true).trim()
 
@@ -40,7 +40,6 @@ pipeline {
                 }
             }
         }
-
         stage('Wait for CircleCI Completion') {
             steps {
                 script {
