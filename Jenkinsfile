@@ -98,8 +98,8 @@ pipeline {
                                     ),
                                     sshTransfer(
                                         execCommand: """
-                                            kubectl rollout status deployment/backend-deployment-${env.BORG} -n ${NAMESPACE}
-                                            kubectl wait --for=condition=available deployment/backend-${env.BORG} --timeout=120s -n ${NAMESPACE}
+                                            kubectl rollout status deployment/backend-${env.BORG} -n ${NAMESPACE}
+                                            kubectl wait --for=condition=ready deployment/backend-${env.BORG} --timeout=120s -n ${NAMESPACE}
                                         """
                                     ),
                                     sshTransfer(
