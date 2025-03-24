@@ -2,8 +2,6 @@ pipeline {
 	agent any
 
     environment {
-		IMAGE_NAME = 'celairm/backend2'
-        IMAGE_TAG = "0.${BUILD_NUMBER}"
         GITHUB_REPO = 'https://github.com/celarim/jenkins_test'
         NAMESPACE = 'kgj'
         GIT_DEPLOYMENT_YAML = 'https://raw.githubusercontent.com/beyond-sw-camp/be12-3rd-Mr.Krabs-Across-The-Pacific/refs/heads/feat/cicd/jenkins/k8s/backend-deployment.yml'
@@ -102,7 +100,8 @@ pipeline {
                                     ),
                                     sshTransfer(
                                         execCommand: """
-                                            kubectl wait --for=condition=available deployment/backend-${env.BORG} --timeout=120s
+                                            kubectl rollout status deployment/backend-deployment-${env.BORG} -n ${NAMESPACE}
+                                            kubectl wait --for=condition=available deployment/backend-${env.BORG} --timeout=120s -n ${NAMESPACE}
                                         """
                                     ),
                                     sshTransfer(
