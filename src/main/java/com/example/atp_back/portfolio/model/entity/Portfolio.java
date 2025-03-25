@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 @Entity
 public class Portfolio {
     @Id
@@ -25,6 +26,8 @@ public class Portfolio {
     private String imageUrl; //메인 페이지에서 포트폴리오 이미지를 띄우기 위해 추가(현재 ERD에는 없음)
     private int viewCnt;
     private int badges; //메인 페이지에서 포트폴리오의 뱃지 목록을 가져오기 위한 반정규화
+    private Double profit; // 수익률 기록하는 반정규화 컬럼 + Setter 어노테이션이 있어야 하는 이유
+    private int ratings; // 하루에 한 번 정기적으로 갱신되는 ratings
 
     public void addViewCount() { this.viewCnt ++; }
     @ManyToOne

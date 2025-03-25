@@ -1,26 +1,21 @@
 package com.example.atp_back.stock;
 
 import com.example.atp_back.common.BaseResponse;
-import com.example.atp_back.common.PageResponse;
-import com.example.atp_back.stock.model.StockReply;
 import com.example.atp_back.stock.model.req.StockReplyRegisterReq;
 import com.example.atp_back.stock.model.resp.StockDetailResp;
 import com.example.atp_back.stock.model.resp.StockListResp;
-import com.example.atp_back.stock.model.resp.StockReplyResp;
+import com.example.atp_back.stock.service.StockGraphService;
 import com.example.atp_back.stock.service.StockReplyLikesService;
 import com.example.atp_back.stock.service.StockReplyService;
 import com.example.atp_back.stock.service.StockService;
 import com.example.atp_back.user.model.User;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.annotation.Nullable;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
-import org.springframework.data.domain.Slice;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -37,6 +32,7 @@ public class StockController {
     private final StockService stockService;
     private final StockReplyService stockReplyService;
     private final StockReplyLikesService stockReplyLikesService;
+    private final StockGraphService stockGraphService;
 
     @Operation(summary = "주식 상세페이지 조회", description = """
             /stock/detail/{idx} 값을 입력 받는다. \n
@@ -55,46 +51,21 @@ public class StockController {
             /stock/list 값을 입력 받는다. \n
             주식들의 id, 주식 이름, 주식 코드, 주식 거래소 값들을 반환한다.
             """)
-    @GetMapping("/list/all")
+    @GetMapping("/list")
     public ResponseEntity<BaseResponse<List<StockListResp>>> getStocks() {
         BaseResponse<List<StockListResp>> resp = BaseResponse.success(stockService.getAllStocks());
         return ResponseEntity.ok(resp);
     }
 
-    @Operation(summary = "주식 목록 조회 페이지", description = """
-            /stock/list 값을 입력 받는다. \n
-            주식들의 id, 주식 이름, 주식 코드, 주식 거래소 값들을 반환한다.
-            """)
-    @GetMapping("/list")
-    public ResponseEntity<BaseResponse<PageResponse<StockListResp>>> getStocks(Integer page, Integer size) {
-        if(page == null || page < 1) page=0;
-        if(size==null || size < 1) size=10;
-        BaseResponse<PageResponse<StockListResp>> resp = BaseResponse.success(stockService.getAllStocks(page, size));
-        return ResponseEntity.ok(resp);
-    }
-
-    @Operation(summary = "주식 댓글 가져오기", description = """
-            GET /stock/reply/{stockId} 값을 입력 받는다. 인가된 사용자를 받을 수도 있다. \n
-            stockId 값과 size, page 값을 전달받아 size 만큼의 개수의 stockId와 일치하는 댓글을 전달한다.
-            """)
-    @GetMapping("/reply/{stockId}")
-    public ResponseEntity<BaseResponse<Slice<StockReplyResp>>> getReply(@PathVariable @Valid @PositiveOrZero Long stockId,
-                                                                    @RequestParam(defaultValue = "10") int size,
-                                                                    @RequestParam(defaultValue = "0") int page,
-                                                                    @AuthenticationPrincipal @Nullable User user) {
-        Slice<StockReplyResp> result = stockReplyService.getStockReply(stockId, size, page, user);
-        BaseResponse<Slice<StockReplyResp>> resp = BaseResponse.success(result);
-        return ResponseEntity.ok(resp);
-    }
 
     @Operation(summary = "주식 댓글 작성", description = """
             /stock/reply/{stockId} 값을 입력 받는다. 인가된 사용자만 사용할 수 있다. \n
             contents 값을 전달 받아서 인가 사용자와 입력받은 주식 id 값을 바탕으로 댓글을 저장한다.
             """)
     @PostMapping("/reply/{stockId}")
-    public ResponseEntity<BaseResponse<String>> PostStockReply(@RequestBody StockReplyRegisterReq dto,
-                                                              @AuthenticationPrincipal User user,
-                                                              @PathVariable Long stockId) {
+    public ResponseEntity<BaseResponse<String>> PostStockReply(@RequestBody @Valid StockReplyRegisterReq dto,
+                                                              @AuthenticationPrincipal @Valid @NotNull User user,
+                                                              @PathVariable @Valid @PositiveOrZero Long stockId) {
         stockReplyService.addReply(dto, user, stockId);
         BaseResponse<String> resp = BaseResponse.success("success");
         return ResponseEntity.ok(resp);
@@ -111,4 +82,12 @@ public class StockController {
         BaseResponse<String> resp = BaseResponse.success("success");
         return ResponseEntity.ok(resp);
     }
+    @Operation(summary="종목의 최신 가격 구하기", description="/recent/{code} URI로 종목 코드 문자열을 code에 받아와 Double 타입으로 최근 가격을 달러 단위로 반환한다.")
+    @GetMapping("/recent/{code}")
+    public ResponseEntity<BaseResponse<Double>> getRecentPrice(@Valid @NotBlank @PathVariable String code) {
+        Double result = stockGraphService.getRecentPrice(code);
+        BaseResponse<Double> resp = BaseResponse.<Double>builder().isSuccess(true).result(result).build();
+        return ResponseEntity.ok(resp);
+    }
+
 }

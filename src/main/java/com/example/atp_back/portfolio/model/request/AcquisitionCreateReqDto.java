@@ -16,6 +16,8 @@ public class AcquisitionCreateReqDto {
     private Long stockIdx;
   @Schema(description = "주식 이름", example = "Apple Inc. Common Stock")
     private String stockName;
+  @Schema(description= "종목 코드", example = "AAPL")
+    private String stockCode;
   @Schema(description = "매입 가격", example = "75000")
     private Long price;
   @Schema(description = "매입 수량", example = "10")

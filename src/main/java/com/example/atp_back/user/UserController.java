@@ -1,6 +1,8 @@
 package com.example.atp_back.user;
 
 import com.example.atp_back.common.BaseResponse;
+import com.example.atp_back.portfolio.model.response.PortfolioInstanceResp;
+import com.example.atp_back.portfolio.model.response.PortfolioPageResp;
 import com.example.atp_back.user.model.User;
 import com.example.atp_back.user.model.request.SignupReq;
 import com.example.atp_back.user.model.follow.response.FolloweeResp;
@@ -16,11 +18,15 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/user")
@@ -82,7 +88,7 @@ public class UserController {
     }
 
 
-    @Operation(summary="사용자 언팔로우", description="사용자 간 언팔로우 기능")
+    @Operation(summary="언팔로우", description="사용자 간 언팔로우 기능")
     @ApiResponse(responseCode="200", description="정상적으로 반환하였습니다")
     @ApiResponse(responseCode="400", description="잘못된 언팔로우 양식입니다")
     @PostMapping("/unfollow")
@@ -112,6 +118,27 @@ public class UserController {
     @PostMapping("/logout")
     public ResponseEntity<BaseResponse<String>> successfulLogout() {
         return ResponseEntity.ok(BaseResponse.<String>success( "로그아웃에 성공했습니다"));
+    }
+
+    @Operation(summary="내 포트폴리오 조회(페이징)", description="내가 작성한 포트폴리오의 특정 페이지 목록 조회")
+    @ApiResponse(responseCode="200", description="정상적으로 반환하였습니다")
+    @ApiResponse(responseCode="400", description="잘못된 요청 양식입니다")
+    @ApiResponse(responseCode="404", description="요청하신 리소스를 찾을 수 없습니다.")
+    @GetMapping("/portfolio/{pagenum}")
+    public ResponseEntity<BaseResponse<PortfolioPageResp>> getMyPortfolio(@AuthenticationPrincipal User user, @PathVariable Integer pagenum) {
+        if (pagenum == null) pagenum = 0;
+        PortfolioPageResp result = userService.getMyPortfolio(user, pagenum);
+        return ResponseEntity.ok(BaseResponse.<PortfolioPageResp>success(result));
+    }
+    @Operation(summary="내 포트폴리오 조회", description="내가 작성한 포트폴리오 목록 조회")
+    @ApiResponse(responseCode="200", description="정상적으로 반환하였습니다")
+    @ApiResponse(responseCode="400", description="잘못된 요청 양식입니다")
+    @ApiResponse(responseCode="404", description="요청하신 리소스를 찾을 수 없습니다.")
+    @GetMapping("/portfolio")
+    public ResponseEntity<BaseResponse<PortfolioPageResp>> getMyPortfolio(@AuthenticationPrincipal User user) {
+        log.info("요청한 자: {}", user.getIdx());
+        PortfolioPageResp result = userService.getMyPortfolio(user, 0);
+        return ResponseEntity.ok(BaseResponse.<PortfolioPageResp>success(result));
     }
 
 }

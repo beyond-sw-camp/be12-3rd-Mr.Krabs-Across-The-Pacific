@@ -96,6 +96,7 @@ public class PortfolioController {
           @AuthenticationPrincipal User user,
           @RequestBody PortfolioReplyReq dto,
           @PathVariable Long portfolioIdx) {
+    user.setVersion(0L);
     Long idx = portfolioReplyService.registerReply(dto, user, portfolioIdx);
     BaseResponse<Long> resp = BaseResponse.success(idx);
     return ResponseEntity.ok(resp);
@@ -121,5 +122,12 @@ public class PortfolioController {
     Boolean result = portfolioService.registerBookmark(user, portfolioBookmarkReq.getPortfolioIdx(), portfolioBookmarkReq.isBookmark());
       BaseResponse<Boolean> resp = BaseResponse.success(result);
       return ResponseEntity.ok(resp);
+  }
+
+  @Operation(summary = "포트폴리오 수익률 계산", description="포트폴리오 수익률 계산을 수동으로 새로고침")
+  @GetMapping("/profit/renew")
+  public ResponseEntity<BaseResponse<Boolean>> renew(@AuthenticationPrincipal User user) {
+    portfolioService.runProfitData();
+    return ResponseEntity.ok(BaseResponse.success(true));
   }
 }

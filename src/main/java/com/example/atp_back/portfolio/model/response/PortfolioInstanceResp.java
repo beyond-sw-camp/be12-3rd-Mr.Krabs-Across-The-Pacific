@@ -4,6 +4,7 @@ import com.example.atp_back.portfolio.model.entity.Badge;
 import com.example.atp_back.portfolio.model.entity.Portfolio;
 import com.example.atp_back.portfolio.model.entity.PortfolioReply;
 import com.example.atp_back.portfolio.model.entity.Reward;
+import com.example.atp_back.stock.model.StockGraphDocument;
 import com.example.atp_back.user.model.User;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -32,7 +33,10 @@ public class PortfolioInstanceResp {
     private Long userIdx;
   @Schema(description = "포트폴리오 이름", example = "Crab's Portfolio")
     private String name;
-  private String userName;
+  @Schema(description = "포트폴리오 수익률", example = "3.85")
+    private Double profit;
+  @Schema(description = "포트폴리오 순위", example = "19")
+    private Integer ratings;
   @Schema(description = "생성된 포트폴리오의 정보를 담은 이미지")
     private String imageUrl;
   @Schema(description = "포트폴리오가 조회된 횟수", example = "100")
@@ -86,11 +90,11 @@ public class PortfolioInstanceResp {
         .idx(portfolio.getIdx())
         .name(portfolio.getName())
         .userIdx(portfolio.getUser().getIdx())
-        .userName(portfolio.getUser().getName())
         .profileImage(portfolio.getUser().getProfileImage())
         .isOwn(user!=null && user.getIdx().equals(portfolio.getUser().getIdx()))// 포트폴리오 소유 여부 확인
-        .topStocks(topStocks)
-        .acquisitionList(portfolio.getAcquisitionList().stream().map(AcquisitionInstanceResp::from).collect(Collectors.toList()))
+        .topStocks(topStocks).acquisitionList(acquisitionList)
+        .profit(portfolio.getProfit())
+        .ratings(portfolio.getRatings())
         .build();
   }
 

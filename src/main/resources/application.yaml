@@ -1,9 +1,4 @@
 spring:
-  web:
-    cors:
-      allowed-origins: "https://celarim.kro.kr:443" # 프론트엔드 URL을 설정
-      allowed-methods: "*"
-      allowed-headers: "*"
   datasource:
     url: ${DB_URL}
     username: ${DB_USER}
@@ -14,11 +9,11 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        format_sql: true
+        format_sql: false
     database-platform: org.hibernate.dialect.MariaDBDialect
-  sql:
-    init:
-      mode: always
+  data:
+    mongodb:
+      uri: mongodb+srv://${MONGODB_ID}:${MONGODB_PASS}@cluster0.e5il1.mongodb.net/americastock?retryWrites=true&w=majority&appName=Cluster0
 
 logging:
   level:
@@ -31,3 +26,5 @@ jwtData:
   expiration: ${JWT_EXPIRATION}
 filepath:
   default: ${FILEPATH}
+
+url: ${SERVER_URL}

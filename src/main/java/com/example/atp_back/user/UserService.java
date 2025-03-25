@@ -2,6 +2,12 @@ package com.example.atp_back.user;
 
 import com.example.atp_back.common.code.status.ErrorStatus;
 import com.example.atp_back.common.exception.handler.UserHandler;
+import com.example.atp_back.portfolio.model.entity.Portfolio;
+import com.example.atp_back.portfolio.model.response.PortfolioInstanceResp;
+import com.example.atp_back.portfolio.model.response.PortfolioListResp;
+import com.example.atp_back.portfolio.model.response.PortfolioPageResp;
+import com.example.atp_back.portfolio.repository.PortfolioCustomRepository;
+import com.example.atp_back.portfolio.repository.PortfolioRepository;
 import com.example.atp_back.user.model.*;
 import com.example.atp_back.user.model.follow.response.FollowResp;
 import com.example.atp_back.user.model.follow.UserFollow;
@@ -16,6 +22,9 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -35,6 +44,7 @@ public class UserService implements UserDetailsService {
     private final PasswordEncoder passwordEncoder;
     private final UserTierRepository userTierRepository;
     private final UserFollowRepository userFollowRepository;
+    private final PortfolioCustomRepository portfolioRepository;
     private final EntityManager entityManager;
 
     @Value("${filepath.default}")
@@ -190,6 +200,11 @@ public class UserService implements UserDetailsService {
         userRepository.delete(user);
     }
     */
+
+    public PortfolioPageResp getMyPortfolio(User user, int offset) {
+        Page<PortfolioInstanceResp> myportfolio = portfolioRepository.findAllByOrderByUserId(PageRequest.of(offset, 30),"", user.getIdx());
+        return PortfolioPageResp.from(user,myportfolio);
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

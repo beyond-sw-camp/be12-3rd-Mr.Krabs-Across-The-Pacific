@@ -1,9 +1,14 @@
 package com.example.atp_back.portfolio.service;
 
+import com.example.atp_back.common.code.status.ErrorStatus;
+import com.example.atp_back.common.exception.handler.PortfolioHandler;
+import com.example.atp_back.common.exception.handler.UserHandler;
 import com.example.atp_back.portfolio.model.entity.*;
 import com.example.atp_back.portfolio.model.request.PortfolioCreateReqDto;
 import com.example.atp_back.portfolio.model.response.*;
 import com.example.atp_back.portfolio.repository.*;
+import com.example.atp_back.stock.model.Stock;
+import com.example.atp_back.stock.repository.StockRepository;
 import com.example.atp_back.user.model.User;
 import jakarta.annotation.Nullable;
 import jakarta.transaction.Transactional;
@@ -26,10 +31,15 @@ public class PortfolioService {
     private final BookmarkRepository bookmarkRepository;
     private final PortfolioReplyService portfolioReplyService;
     private final AcquisitionRepository acquisitionRepository;
+    private final StockRepository stockRepository;
 
     @Transactional
     public Long register(User user, PortfolioCreateReqDto dto) {
         Portfolio portfolio = portfolioRepository.save(dto.toEntity(user));
+        dto.getAcquisitionList().forEach(acquisition -> {
+            Stock stock = stockRepository.findByCode(acquisition.getStockCode()).orElseThrow(()-> new PortfolioHandler(ErrorStatus._BAD_REQUEST));
+            acquisitionRepository.save(acquisition.toEntity(stock, portfolio));
+        });
         return portfolio.getIdx();
     }
 

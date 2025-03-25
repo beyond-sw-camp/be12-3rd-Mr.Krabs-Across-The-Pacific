@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Slice;
 
 import java.util.List;
 
@@ -32,5 +33,15 @@ public class PageResponse<T> {
                 .hasPrevious(page.hasPrevious())
                 .instances(dto)
                 .build();
+    }
+
+    public static <T> PageResponse<T> from(Slice<T> slice) {
+      return PageResponse.<T>builder()
+          .page(slice.getNumber())
+          .size(slice.getSize())
+          .hasNext(slice.hasNext())
+          .hasPrevious(slice.hasPrevious())
+          .instances(slice.getContent())
+          .build();
     }
 }

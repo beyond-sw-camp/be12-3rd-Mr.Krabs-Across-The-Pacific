@@ -1,3 +1,4 @@
+START TRANSACTION;
 CREATE TABLE IF NOT EXISTS stock( idx BIGINT(20) NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100) NOT NULL, market VARCHAR(100) NOT NULL, code VARCHAR(10) NOT NULL);
 
 INSERT INTO stock(name, market, code) VALUES ('Artius II Acquisition Inc. Units', 'nasdaq', 'AACBU');
@@ -17,10 +18,10 @@ INSERT INTO stock(name, market, code) VALUES ('Abacus Life Inc. Class A Common S
 INSERT INTO stock(name, market, code) VALUES ('Abacus Life Inc. 9.875% Fixed Rate Senior Notes due 2028', 'nasdaq', 'ABLLL');
 INSERT INTO stock(name, market, code) VALUES ('Abacus Life Inc. Warrant', 'nasdaq', 'ABLLW');
 INSERT INTO stock(name, market, code) VALUES ('Able View Global Inc. Class B Ordinary Shares', 'nasdaq', 'ABLV');
+INSERT INTO stock(name, market, code) VALUES ('Able View Global Inc. Warrant', 'nasdaq', 'ABLVW');
 INSERT INTO stock(name, market, code) VALUES ('Airbnb Inc. Class A Common Stock', 'nasdaq', 'ABNB');
 INSERT INTO stock(name, market, code) VALUES ('Acumen Pharmaceuticals Inc. Common Stock', 'nasdaq', 'ABOS');
 INSERT INTO stock(name, market, code) VALUES ('Abpro Holdings Inc Common Stock', 'nasdaq', 'ABP');
-INSERT INTO stock(name, market, code) VALUES ('Abpro Holdings Inc. Warrant', 'nasdaq', 'ABPWW');
 INSERT INTO stock(name, market, code) VALUES ('Absci Corporation Common Stock', 'nasdaq', 'ABSI');
 INSERT INTO stock(name, market, code) VALUES ('Abits Group Inc Ordinary Shares', 'nasdaq', 'ABTS');
 INSERT INTO stock(name, market, code) VALUES ('Arbutus Biopharma Corporation Common Stock', 'nasdaq', 'ABUS');
@@ -78,6 +79,7 @@ INSERT INTO stock(name, market, code) VALUES ('Aditxt Inc. Common Stock', 'nasda
 INSERT INTO stock(name, market, code) VALUES ('Aduro Clean Technologies Inc. Common Stock', 'nasdaq', 'ADUR');
 INSERT INTO stock(name, market, code) VALUES ('Addus HomeCare Corporation Common Stock', 'nasdaq', 'ADUS');
 INSERT INTO stock(name, market, code) VALUES ('Advantage Solutions Inc. Class A Common Stock', 'nasdaq', 'ADV');
+INSERT INTO stock(name, market, code) VALUES ('Advanced Biomed Inc. Common Stock', 'nasdaq', 'ADVB');
 INSERT INTO stock(name, market, code) VALUES ('Adverum Biotechnologies Inc. Common Stock', 'nasdaq', 'ADVM');
 INSERT INTO stock(name, market, code) VALUES ('Advantage Solutions Inc. Warrant', 'nasdaq', 'ADVWW');
 INSERT INTO stock(name, market, code) VALUES ('Addex Therapeutics Ltd American Depositary Shares', 'nasdaq', 'ADXN');
@@ -90,12 +92,15 @@ INSERT INTO stock(name, market, code) VALUES ('Alliance Entertainment Holding Co
 INSERT INTO stock(name, market, code) VALUES ('Alliance Entertainment Holding Corporation Warrants', 'nasdaq', 'AENTW');
 INSERT INTO stock(name, market, code) VALUES ('American Electric Power Company Inc. Common Stock', 'nasdaq', 'AEP');
 INSERT INTO stock(name, market, code) VALUES ('Aeries Technology Inc. Class A Ordinary Share', 'nasdaq', 'AERT');
+INSERT INTO stock(name, market, code) VALUES ('Aeries Technology Inc. Warrant', 'nasdaq', 'AERTW');
 INSERT INTO stock(name, market, code) VALUES ('Aeva Technologies Inc. Common Stock', 'nasdaq', 'AEVA');
 INSERT INTO stock(name, market, code) VALUES ('Aeva Technologies Inc. Warrants', 'nasdaq', 'AEVAW');
 INSERT INTO stock(name, market, code) VALUES ('AudioEye Inc. Common Stock', 'nasdaq', 'AEYE');
 INSERT INTO stock(name, market, code) VALUES ('Affinity Bancshares Inc. Common Stock (MD)', 'nasdaq', 'AFBI');
 INSERT INTO stock(name, market, code) VALUES ('Advanced Flower Capital Inc. Common Stock', 'nasdaq', 'AFCG');
+INSERT INTO stock(name, market, code) VALUES ('Aimei Health Technology Co. Ltd Ordinary Share', 'nasdaq', 'AFJK');
 INSERT INTO stock(name, market, code) VALUES ('Aimei Health Technology Co. Ltd Right', 'nasdaq', 'AFJKR');
+INSERT INTO stock(name, market, code) VALUES ('Aimei Health Technology Co. Ltd Unit', 'nasdaq', 'AFJKU');
 INSERT INTO stock(name, market, code) VALUES ('Affimed N.V.', 'nasdaq', 'AFMD');
 INSERT INTO stock(name, market, code) VALUES ('Forafric Global PLC Ordinary Shares', 'nasdaq', 'AFRI');
 INSERT INTO stock(name, market, code) VALUES ('Forafric Global PLC Warrants', 'nasdaq', 'AFRIW');
@@ -122,7 +127,6 @@ INSERT INTO stock(name, market, code) VALUES ('Firefly Neuroscience Inc. Common 
 INSERT INTO stock(name, market, code) VALUES ('AIX Inc. American Depositary Shares', 'nasdaq', 'AIFU');
 INSERT INTO stock(name, market, code) VALUES ('Senmiao Technology Limited Common Stock', 'nasdaq', 'AIHS');
 INSERT INTO stock(name, market, code) VALUES ('Aimfinity Investment Corp. I Unit', 'nasdaq', 'AIMAU');
-INSERT INTO stock(name, market, code) VALUES ('Aimfinity Investment Corp. I Warrant', 'nasdaq', 'AIMAW');
 INSERT INTO stock(name, market, code) VALUES ('Aimfinity Investment Corp. I Subunit', 'nasdaq', 'AIMBU');
 INSERT INTO stock(name, market, code) VALUES ('Ainos Inc. Common Stock', 'nasdaq', 'AIMD');
 INSERT INTO stock(name, market, code) VALUES ('Ainos Inc. Warrants', 'nasdaq', 'AIMDW');
@@ -159,7 +163,6 @@ INSERT INTO stock(name, market, code) VALUES ('Aldel Financial II Inc. Warrants'
 INSERT INTO stock(name, market, code) VALUES ('Aldeyra Therapeutics Inc. Common Stock', 'nasdaq', 'ALDX');
 INSERT INTO stock(name, market, code) VALUES ('Alector Inc. Common Stock', 'nasdaq', 'ALEC');
 INSERT INTO stock(name, market, code) VALUES ('Centurion Acquisition Corp. Class A Ordinary Shares', 'nasdaq', 'ALF');
-INSERT INTO stock(name, market, code) VALUES ('Centurion Acquisition Corp. Unit', 'nasdaq', 'ALFUU');
 INSERT INTO stock(name, market, code) VALUES ('Centurion Acquisition Corp. Warrant', 'nasdaq', 'ALFUW');
 INSERT INTO stock(name, market, code) VALUES ('Allegro MicroSystems Inc. Common Stock', 'nasdaq', 'ALGM');
 INSERT INTO stock(name, market, code) VALUES ('Align Technology Inc. Common Stock', 'nasdaq', 'ALGN');
@@ -217,7 +220,6 @@ INSERT INTO stock(name, market, code) VALUES ('AnaptysBio Inc. Common Stock', 'n
 INSERT INTO stock(name, market, code) VALUES ('Andersons Inc. (The) Common Stock', 'nasdaq', 'ANDE');
 INSERT INTO stock(name, market, code) VALUES ('Anebulo Pharmaceuticals Inc. Common Stock', 'nasdaq', 'ANEB');
 INSERT INTO stock(name, market, code) VALUES ('Anghami Inc. Ordinary Shares', 'nasdaq', 'ANGH');
-INSERT INTO stock(name, market, code) VALUES ('Anghami Inc. Warrants', 'nasdaq', 'ANGHW');
 INSERT INTO stock(name, market, code) VALUES ('Angi Inc. Class A Common Stock', 'nasdaq', 'ANGI');
 INSERT INTO stock(name, market, code) VALUES ('AngioDynamics Inc. Common Stock', 'nasdaq', 'ANGO');
 INSERT INTO stock(name, market, code) VALUES ('Anika Therapeutics Inc. Common Stock', 'nasdaq', 'ANIK');
@@ -228,7 +230,6 @@ INSERT INTO stock(name, market, code) VALUES ('AleAnna Inc. Class A Common Stock
 INSERT INTO stock(name, market, code) VALUES ('AleAnna Inc. Warrant', 'nasdaq', 'ANNAW');
 INSERT INTO stock(name, market, code) VALUES ('Annexon Inc. Common Stock', 'nasdaq', 'ANNX');
 INSERT INTO stock(name, market, code) VALUES ('Agriculture & Natural Solutions Acquisition Corporation Class A Ordinary Shares', 'nasdaq', 'ANSC');
-INSERT INTO stock(name, market, code) VALUES ('Agriculture & Natural Solutions Acquisition Corporation Unit', 'nasdaq', 'ANSCU');
 INSERT INTO stock(name, market, code) VALUES ('Agriculture & Natural Solutions Acquisition Corporation Warrant', 'nasdaq', 'ANSCW');
 INSERT INTO stock(name, market, code) VALUES ('ANSYS Inc. Common Stock', 'nasdaq', 'ANSS');
 INSERT INTO stock(name, market, code) VALUES ('AirNet Technology Inc. American Depositary Shares', 'nasdaq', 'ANTE');
@@ -262,8 +263,6 @@ INSERT INTO stock(name, market, code) VALUES ('Apyx Medical Corporation Common S
 INSERT INTO stock(name, market, code) VALUES ('AquaBounty Technologies Inc. Common Stock', 'nasdaq', 'AQB');
 INSERT INTO stock(name, market, code) VALUES ('Aqua Metals Inc. Common Stock', 'nasdaq', 'AQMS');
 INSERT INTO stock(name, market, code) VALUES ('Aquestive Therapeutics Inc. Common Stock', 'nasdaq', 'AQST');
-INSERT INTO stock(name, market, code) VALUES ('Aquaron Acquisition Corp. Common Stock', 'nasdaq', 'AQU');
-INSERT INTO stock(name, market, code) VALUES ('Aquaron Acquisition Corp. Rights', 'nasdaq', 'AQUNR');
 INSERT INTO stock(name, market, code) VALUES ('Accuray Incorporated Common Stock', 'nasdaq', 'ARAY');
 INSERT INTO stock(name, market, code) VALUES ('ARB IOT Group Limited Ordinary Shares', 'nasdaq', 'ARBB');
 INSERT INTO stock(name, market, code) VALUES ('Arbe Robotics Ltd. Ordinary Shares', 'nasdaq', 'ARBE');
@@ -339,7 +338,6 @@ INSERT INTO stock(name, market, code) VALUES ('Atlantic International Corp. Comm
 INSERT INTO stock(name, market, code) VALUES ('Ames National Corporation Common Stock', 'nasdaq', 'ATLO');
 INSERT INTO stock(name, market, code) VALUES ('Atlas Lithium Corporation Common Stock', 'nasdaq', 'ATLX');
 INSERT INTO stock(name, market, code) VALUES ('AlphaTime Acquisition Corp Ordinary Shares', 'nasdaq', 'ATMC');
-INSERT INTO stock(name, market, code) VALUES ('AlphaTime Acquisition Corp Right', 'nasdaq', 'ATMCR');
 INSERT INTO stock(name, market, code) VALUES ('AlphaTime Acquisition Corp Warrant', 'nasdaq', 'ATMCW');
 INSERT INTO stock(name, market, code) VALUES ('AlphaVest Acquisition Corp Ordinary Shares', 'nasdaq', 'ATMV');
 INSERT INTO stock(name, market, code) VALUES ('AlphaVest Acquisition Corp Right.', 'nasdaq', 'ATMVR');
@@ -406,6 +404,7 @@ INSERT INTO stock(name, market, code) VALUES ('Bridger Aerospace Group Holdings 
 INSERT INTO stock(name, market, code) VALUES ('BayFirst Financial Corp. Common Stock', 'nasdaq', 'BAFN');
 INSERT INTO stock(name, market, code) VALUES ('Bandwidth Inc. Class A Common Stock', 'nasdaq', 'BAND');
 INSERT INTO stock(name, market, code) VALUES ('BancFirst Corporation Common Stock', 'nasdaq', 'BANF');
+INSERT INTO stock(name, market, code) VALUES ('BancFirst Corporation - BFC Capital Trust II Cumulative Trust Preferred Securities', 'nasdaq', 'BANFP');
 INSERT INTO stock(name, market, code) VALUES ('CBL International Limited Ordinary Shares', 'nasdaq', 'BANL');
 INSERT INTO stock(name, market, code) VALUES ('Banner Corporation Common Stock', 'nasdaq', 'BANR');
 INSERT INTO stock(name, market, code) VALUES ('ArrowMark Financial Corp. Common Stock', 'nasdaq', 'BANX');
@@ -413,7 +412,6 @@ INSERT INTO stock(name, market, code) VALUES ('Baosheng Media Group Holdings Lim
 INSERT INTO stock(name, market, code) VALUES ('Couchbase Inc. Common Stock', 'nasdaq', 'BASE');
 INSERT INTO stock(name, market, code) VALUES ('Atlanta Braves Holdings Inc. Series A Common Stock', 'nasdaq', 'BATRA');
 INSERT INTO stock(name, market, code) VALUES ('Atlanta Braves Holdings Inc. Series C Common Stock', 'nasdaq', 'BATRK');
-INSERT INTO stock(name, market, code) VALUES ('Bayview Acquisition Corp Ordinary Shares', 'nasdaq', 'BAYA');
 INSERT INTO stock(name, market, code) VALUES ('Bayview Acquisition Corp Right', 'nasdaq', 'BAYAR');
 INSERT INTO stock(name, market, code) VALUES ('Concrete Pumping Holdings Inc. Common Stock', 'nasdaq', 'BBCP');
 INSERT INTO stock(name, market, code) VALUES ('Beasley Broadcast Group Inc. Class A Common Stock', 'nasdaq', 'BBGI');
@@ -431,13 +429,13 @@ INSERT INTO stock(name, market, code) VALUES ('Binah Capital Group Inc. Common S
 INSERT INTO stock(name, market, code) VALUES ('Binah Capital Group Inc. Warrants', 'nasdaq', 'BCGWW');
 INSERT INTO stock(name, market, code) VALUES ('Brainstorm Cell Therapeutics Inc. Common Stock', 'nasdaq', 'BCLI');
 INSERT INTO stock(name, market, code) VALUES ('BayCom Corp Common Stock', 'nasdaq', 'BCML');
-INSERT INTO stock(name, market, code) VALUES ('1895 Bancorp of Wisconsin Inc. (MD) Common Stock', 'nasdaq', 'BCOW');
 INSERT INTO stock(name, market, code) VALUES ('Balchem Corporation Common Stock', 'nasdaq', 'BCPC');
 INSERT INTO stock(name, market, code) VALUES ('BioCryst Pharmaceuticals Inc. Common Stock', 'nasdaq', 'BCRX');
 INSERT INTO stock(name, market, code) VALUES ('BriaCell Therapeutics Corp. Common Shares', 'nasdaq', 'BCTX');
 INSERT INTO stock(name, market, code) VALUES ('BriaCell Therapeutics Corp. Warrant', 'nasdaq', 'BCTXW');
 INSERT INTO stock(name, market, code) VALUES ('Bicycle Therapeutics plc American Depositary Shares', 'nasdaq', 'BCYC');
 INSERT INTO stock(name, market, code) VALUES ('Baird Medical Investment Holdings Ltd Ordinary Share', 'nasdaq', 'BDMD');
+INSERT INTO stock(name, market, code) VALUES ('Baird Medical Investment Holdings Ltd Warrant', 'nasdaq', 'BDMDW');
 INSERT INTO stock(name, market, code) VALUES ('Biodexa Pharmaceuticals plc American Depositary Shs', 'nasdaq', 'BDRX');
 INSERT INTO stock(name, market, code) VALUES ('Biodesix Inc. Common Stock', 'nasdaq', 'BDSX');
 INSERT INTO stock(name, market, code) VALUES ('Black Diamond Therapeutics Inc. Common Stock', 'nasdaq', 'BDTX');
@@ -491,7 +489,6 @@ INSERT INTO stock(name, market, code) VALUES ('Bluejay Diagnostics Inc. Common S
 INSERT INTO stock(name, market, code) VALUES ('BJ\'s Restaurants Inc. Common Stock', 'nasdaq', 'BJRI');
 INSERT INTO stock(name, market, code) VALUES ('Black Hawk Acquisition Corporation Class A Ordinary Shares', 'nasdaq', 'BKHA');
 INSERT INTO stock(name, market, code) VALUES ('Black Hawk Acquisition Corporation Rights', 'nasdaq', 'BKHAR');
-INSERT INTO stock(name, market, code) VALUES ('Black Hawk Acquisition Corporation Units', 'nasdaq', 'BKHAU');
 INSERT INTO stock(name, market, code) VALUES ('Booking Holdings Inc. Common Stock', 'nasdaq', 'BKNG');
 INSERT INTO stock(name, market, code) VALUES ('Baker Hughes Company Class A Common Stock', 'nasdaq', 'BKR');
 INSERT INTO stock(name, market, code) VALUES ('BIO-key International Inc. Common Stock', 'nasdaq', 'BKYI');
@@ -515,6 +512,7 @@ INSERT INTO stock(name, market, code) VALUES ('bluebird bio Inc. Common Stock', 
 INSERT INTO stock(name, market, code) VALUES ('Backblaze Inc. Class A Common Stock', 'nasdaq', 'BLZE');
 INSERT INTO stock(name, market, code) VALUES ('Bumble Inc. Class A Common Stock', 'nasdaq', 'BMBL');
 INSERT INTO stock(name, market, code) VALUES ('Biomea Fusion Inc. Common Stock', 'nasdaq', 'BMEA');
+INSERT INTO stock(name, market, code) VALUES ('Basel Medical Group Ltd Ordinary Shares', 'nasdaq', 'BMGL');
 INSERT INTO stock(name, market, code) VALUES ('Beamr Imaging Ltd. Ordinary Share', 'nasdaq', 'BMR');
 INSERT INTO stock(name, market, code) VALUES ('Biomerica Inc. Common Stock', 'nasdaq', 'BMRA');
 INSERT INTO stock(name, market, code) VALUES ('Bank of Marin Bancorp Common Stock', 'nasdaq', 'BMRC');
@@ -522,7 +520,6 @@ INSERT INTO stock(name, market, code) VALUES ('BioMarin Pharmaceutical Inc. Comm
 INSERT INTO stock(name, market, code) VALUES ('Brand Engagement Network Inc. Common Stock', 'nasdaq', 'BNAI');
 INSERT INTO stock(name, market, code) VALUES ('Brand Engagement Network Inc. Warrant', 'nasdaq', 'BNAIW');
 INSERT INTO stock(name, market, code) VALUES ('Bionano Genomics Inc. Common Stock', 'nasdaq', 'BNGO');
-INSERT INTO stock(name, market, code) VALUES ('Bannix Acquisition Corp. Common Stock', 'nasdaq', 'BNIX');
 INSERT INTO stock(name, market, code) VALUES ('Bannix Acquisition Corp. Right', 'nasdaq', 'BNIXR');
 INSERT INTO stock(name, market, code) VALUES ('Bannix Acquisition Corp. Warrant', 'nasdaq', 'BNIXW');
 INSERT INTO stock(name, market, code) VALUES ('Burning Rock Biotech Limited American Depositary Shares', 'nasdaq', 'BNR');
@@ -535,7 +532,7 @@ INSERT INTO stock(name, market, code) VALUES ('BranchOut Food Inc. Common Stock'
 INSERT INTO stock(name, market, code) VALUES ('BOK Financial Corporation Common Stock', 'nasdaq', 'BOKF');
 INSERT INTO stock(name, market, code) VALUES ('Boundless Bio Inc. Common Stock', 'nasdaq', 'BOLD');
 INSERT INTO stock(name, market, code) VALUES ('Bolt Biotherapeutics Inc. Common Stock', 'nasdaq', 'BOLT');
-INSERT INTO stock(name, market, code) VALUES ('Bon Natural Life Limited Ordinary Shares', 'nasdaq', 'BON');
+INSERT INTO stock(name, market, code) VALUES ('Bon Natural Life Limited Class A Ordinary Shares', 'nasdaq', 'BON');
 INSERT INTO stock(name, market, code) VALUES ('DMC Global Inc. Common Stock', 'nasdaq', 'BOOM');
 INSERT INTO stock(name, market, code) VALUES ('B.O.S. Better Online Solutions Common Stock', 'nasdaq', 'BOSC');
 INSERT INTO stock(name, market, code) VALUES ('Bank of the James Financial Group Inc. Common Stock', 'nasdaq', 'BOTJ');
@@ -569,8 +566,6 @@ INSERT INTO stock(name, market, code) VALUES ('Bogota Financial Corp. Common Sto
 INSERT INTO stock(name, market, code) VALUES ('Bassett Furniture Industries Incorporated Common Stock', 'nasdaq', 'BSET');
 INSERT INTO stock(name, market, code) VALUES ('BioSig Technologies Inc. Common Stock', 'nasdaq', 'BSGM');
 INSERT INTO stock(name, market, code) VALUES ('Black Spade Acquisition II Co Class A Ordinary Share', 'nasdaq', 'BSII');
-INSERT INTO stock(name, market, code) VALUES ('Black Spade Acquisition II Co Unit', 'nasdaq', 'BSIIU');
-INSERT INTO stock(name, market, code) VALUES ('Black Spade Acquisition II Co Warrant', 'nasdaq', 'BSIIW');
 INSERT INTO stock(name, market, code) VALUES ('Bolt Projects Holdings Inc. Common Stock', 'nasdaq', 'BSLK');
 INSERT INTO stock(name, market, code) VALUES ('Bolt Projects Holdings Inc. Warrant', 'nasdaq', 'BSLKW');
 INSERT INTO stock(name, market, code) VALUES ('Sierra Bancorp Common Stock', 'nasdaq', 'BSRR');
@@ -592,6 +587,7 @@ INSERT INTO stock(name, market, code) VALUES ('BrightSpring Health Services Inc.
 INSERT INTO stock(name, market, code) VALUES ('BrightSpring Health Services Inc. Tangible Equity Unit', 'nasdaq', 'BTSGU');
 INSERT INTO stock(name, market, code) VALUES ('Bukit Jalil Global Acquisition 1 Ltd. Ordinary Shares', 'nasdaq', 'BUJA');
 INSERT INTO stock(name, market, code) VALUES ('Bukit Jalil Global Acquisition 1 Ltd. Rights', 'nasdaq', 'BUJAR');
+INSERT INTO stock(name, market, code) VALUES ('Bukit Jalil Global Acquisition 1 Ltd. Unit', 'nasdaq', 'BUJAU');
 INSERT INTO stock(name, market, code) VALUES ('First Busey Corporation Class A Common Stock', 'nasdaq', 'BUSE');
 INSERT INTO stock(name, market, code) VALUES ('BV Financial Inc. Common Stock', 'nasdaq', 'BVFL');
 INSERT INTO stock(name, market, code) VALUES ('Bioventus Inc. Class A Common Stock', 'nasdaq', 'BVS');
@@ -623,8 +619,8 @@ INSERT INTO stock(name, market, code) VALUES ('Cal-Maine Foods Inc. Common Stock
 INSERT INTO stock(name, market, code) VALUES ('CAMP4 Therapeutics Corporation Common Stock', 'nasdaq', 'CAMP');
 INSERT INTO stock(name, market, code) VALUES ('Camtek Ltd. Ordinary Shares', 'nasdaq', 'CAMT');
 INSERT INTO stock(name, market, code) VALUES ('Canaan Inc. American Depositary Shares', 'nasdaq', 'CAN');
-INSERT INTO stock(name, market, code) VALUES ('Cayson Acquisition Corp Ordinary shares', 'nasdaq', 'CAPN');
 INSERT INTO stock(name, market, code) VALUES ('Capricor Therapeutics Inc. Common Stock', 'nasdaq', 'CAPR');
+INSERT INTO stock(name, market, code) VALUES ('Capstone Holding Corp. Common Stock', 'nasdaq', 'CAPS');
 INSERT INTO stock(name, market, code) VALUES ('Captivision Inc. Ordinary Shares', 'nasdaq', 'CAPT');
 INSERT INTO stock(name, market, code) VALUES ('Captivision Inc. Warrant', 'nasdaq', 'CAPTW');
 INSERT INTO stock(name, market, code) VALUES ('Avis Budget Group Inc. Common Stock', 'nasdaq', 'CAR');
@@ -661,7 +657,6 @@ INSERT INTO stock(name, market, code) VALUES ('Cohen Circle Acquisition Corp. I 
 INSERT INTO stock(name, market, code) VALUES ('Cohen Circle Acquisition Corp. I Unit', 'nasdaq', 'CCIRU');
 INSERT INTO stock(name, market, code) VALUES ('Cohen Circle Acquisition Corp. I Warrant', 'nasdaq', 'CCIRW');
 INSERT INTO stock(name, market, code) VALUES ('Churchill Capital Corp IX Ordinary Shares', 'nasdaq', 'CCIX');
-INSERT INTO stock(name, market, code) VALUES ('Churchill Capital Corp IX Unit', 'nasdaq', 'CCIXU');
 INSERT INTO stock(name, market, code) VALUES ('Churchill Capital Corp IX Warrant', 'nasdaq', 'CCIXW');
 INSERT INTO stock(name, market, code) VALUES ('CareCloud Inc. Common Stock', 'nasdaq', 'CCLD');
 INSERT INTO stock(name, market, code) VALUES ('CareCloud Inc. 8.75% Series B Cumulative Redeemable Perpetual Preferred Stock', 'nasdaq', 'CCLDO');
@@ -710,7 +705,6 @@ INSERT INTO stock(name, market, code) VALUES ('Certara Inc. Common Stock', 'nasd
 INSERT INTO stock(name, market, code) VALUES ('Cemtrex Inc. Common Stock', 'nasdaq', 'CETX');
 INSERT INTO stock(name, market, code) VALUES ('Clean Energy Technologies Inc. Common Stock', 'nasdaq', 'CETY');
 INSERT INTO stock(name, market, code) VALUES ('CEVA Inc. Common Stock', 'nasdaq', 'CEVA');
-INSERT INTO stock(name, market, code) VALUES ('CrossFirst Bankshares Inc. Common Stock', 'nasdaq', 'CFB');
 INSERT INTO stock(name, market, code) VALUES ('CF Bankshares Inc. Common Stock', 'nasdaq', 'CFBK');
 INSERT INTO stock(name, market, code) VALUES ('C&F Financial Corporation Common Stock', 'nasdaq', 'CFFI');
 INSERT INTO stock(name, market, code) VALUES ('Capitol Federal Financial Inc. Common Stock', 'nasdaq', 'CFFN');
@@ -729,7 +723,7 @@ INSERT INTO stock(name, market, code) VALUES ('Cognyte Software Ltd. Ordinary Sh
 INSERT INTO stock(name, market, code) VALUES ('Cognex Corporation Common Stock', 'nasdaq', 'CGNX');
 INSERT INTO stock(name, market, code) VALUES ('Calamos Global Total Return Fund Common Stock', 'nasdaq', 'CGO');
 INSERT INTO stock(name, market, code) VALUES ('CG Oncology Inc. Common stock', 'nasdaq', 'CGON');
-INSERT INTO stock(name, market, code) VALUES ('Creative Global Technology Holdings Limited Ordinary Shares', 'nasdaq', 'CGTL');
+INSERT INTO stock(name, market, code) VALUES ('Creative Global Technology Holdings Limited Class A Ordinary Shares', 'nasdaq', 'CGTL');
 INSERT INTO stock(name, market, code) VALUES ('Cognition Therapeutics Inc. Common Stock', 'nasdaq', 'CGTX');
 INSERT INTO stock(name, market, code) VALUES ('Charlton Aria Acquisition Corporation Class A Ordinary Shares', 'nasdaq', 'CHAR');
 INSERT INTO stock(name, market, code) VALUES ('Charlton Aria Acquisition Corporation Rights', 'nasdaq', 'CHARR');
@@ -766,7 +760,6 @@ INSERT INTO stock(name, market, code) VALUES ('CISO Global Inc. Common Stock', '
 INSERT INTO stock(name, market, code) VALUES ('C3is Inc. Common Stock', 'nasdaq', 'CISS');
 INSERT INTO stock(name, market, code) VALUES ('Civista Bancshares Inc. Common Stock', 'nasdaq', 'CIVB');
 INSERT INTO stock(name, market, code) VALUES ('Chijet Motor Company Inc. Ordinary Shares', 'nasdaq', 'CJET');
-INSERT INTO stock(name, market, code) VALUES ('China Jo-Jo Drugstores Inc. (Cayman Islands) Ordinary Shares', 'nasdaq', 'CJJD');
 INSERT INTO stock(name, market, code) VALUES ('Callan JMB Inc. Common Stock', 'nasdaq', 'CJMB');
 INSERT INTO stock(name, market, code) VALUES ('Checkpoint Therapeutics Inc. Common Stock', 'nasdaq', 'CKPT');
 INSERT INTO stock(name, market, code) VALUES ('Clarus Corporation Common Stock', 'nasdaq', 'CLAR');
@@ -783,7 +776,6 @@ INSERT INTO stock(name, market, code) VALUES ('Climb Global Solutions Inc. Commo
 INSERT INTO stock(name, market, code) VALUES ('Calumet Inc. Common Stock', 'nasdaq', 'CLMT');
 INSERT INTO stock(name, market, code) VALUES ('Clean Energy Fuels Corp. Common Stock', 'nasdaq', 'CLNE');
 INSERT INTO stock(name, market, code) VALUES ('Clene Inc. Common Stock', 'nasdaq', 'CLNN');
-INSERT INTO stock(name, market, code) VALUES ('Clene Inc. Warrant', 'nasdaq', 'CLNNW');
 INSERT INTO stock(name, market, code) VALUES ('Clover Health Investments Corp. Class A Common Stock', 'nasdaq', 'CLOV');
 INSERT INTO stock(name, market, code) VALUES ('CLPS Incorporation Common Stock', 'nasdaq', 'CLPS');
 INSERT INTO stock(name, market, code) VALUES ('ClearPoint Neuro Inc. Common Stock', 'nasdaq', 'CLPT');
@@ -806,7 +798,6 @@ INSERT INTO stock(name, market, code) VALUES ('Cumulus Media Inc. Class A Common
 INSERT INTO stock(name, market, code) VALUES ('Chemomab Therapeutics Ltd. American Depositary Share', 'nasdaq', 'CMMB');
 INSERT INTO stock(name, market, code) VALUES ('Clearmind Medicine Inc. Common Shares', 'nasdaq', 'CMND');
 INSERT INTO stock(name, market, code) VALUES ('CompoSecure Inc. Class A Common Stock', 'nasdaq', 'CMPO');
-INSERT INTO stock(name, market, code) VALUES ('CompoSecure Inc.  Class A Common Stock Ex-distribution When-Issued', 'nasdaq', 'CMPOV');
 INSERT INTO stock(name, market, code) VALUES ('CompoSecure Inc. Warrant', 'nasdaq', 'CMPOW');
 INSERT INTO stock(name, market, code) VALUES ('Cimpress plc Ordinary Shares (Ireland)', 'nasdaq', 'CMPR');
 INSERT INTO stock(name, market, code) VALUES ('COMPASS Pathways Plc American Depository Shares', 'nasdaq', 'CMPS');
@@ -819,6 +810,7 @@ INSERT INTO stock(name, market, code) VALUES ('Conduent Incorporated Common Stoc
 INSERT INTO stock(name, market, code) VALUES ('ZW Data Action Technologies Inc. Common Stock', 'nasdaq', 'CNET');
 INSERT INTO stock(name, market, code) VALUES ('CN Energy Group Inc. Class A Ordinary Shares', 'nasdaq', 'CNEY');
 INSERT INTO stock(name, market, code) VALUES ('Conifer Holdings Inc. Common Stock', 'nasdaq', 'CNFR');
+INSERT INTO stock(name, market, code) VALUES ('Conifer Holdings Inc. 9.75% Senior Unsecured Notes due 2028', 'nasdaq', 'CNFRZ');
 INSERT INTO stock(name, market, code) VALUES ('ConnectOne Bancorp Inc. Common Stock', 'nasdaq', 'CNOB');
 INSERT INTO stock(name, market, code) VALUES ('ConnectOne Bancorp Inc. Depositary Shares each representing a 1/40th interest in a share of 5.25% Fixed-Rate Reset Non-Cumulative Perpetual Preferred Stock Series A', 'nasdaq', 'CNOBP');
 INSERT INTO stock(name, market, code) VALUES ('CNS Pharmaceuticals Inc. Common Stock', 'nasdaq', 'CNSP');
@@ -886,7 +878,6 @@ INSERT INTO stock(name, market, code) VALUES ('Freightos Limited Ordinary shares
 INSERT INTO stock(name, market, code) VALUES ('Freightos Limited Warrants', 'nasdaq', 'CRGOW');
 INSERT INTO stock(name, market, code) VALUES ('CARGO Therapeutics Inc. Common Stock', 'nasdaq', 'CRGX');
 INSERT INTO stock(name, market, code) VALUES ('Curis Inc. Common Stock', 'nasdaq', 'CRIS');
-INSERT INTO stock(name, market, code) VALUES ('Crown Electrokinetics Corp. Common Stock', 'nasdaq', 'CRKN');
 INSERT INTO stock(name, market, code) VALUES ('CorMedix Inc. Common Stock', 'nasdaq', 'CRMD');
 INSERT INTO stock(name, market, code) VALUES ('Critical Metals Corp. Ordinary Shares', 'nasdaq', 'CRML');
 INSERT INTO stock(name, market, code) VALUES ('Critical Metals Corp. Warrants', 'nasdaq', 'CRMLW');
@@ -924,7 +915,6 @@ INSERT INTO stock(name, market, code) VALUES ('CSW Industrials Inc. Common Stock
 INSERT INTO stock(name, market, code) VALUES ('CSX Corporation Common Stock', 'nasdaq', 'CSX');
 INSERT INTO stock(name, market, code) VALUES ('Cintas Corporation Common Stock', 'nasdaq', 'CTAS');
 INSERT INTO stock(name, market, code) VALUES ('Community Trust Bancorp Inc. Common Stock', 'nasdaq', 'CTBI');
-INSERT INTO stock(name, market, code) VALUES ('Carmell Corporation Common Stock', 'nasdaq', 'CTCX');
 INSERT INTO stock(name, market, code) VALUES ('Charles & Colvard Ltd Common Stock', 'nasdaq', 'CTHR');
 INSERT INTO stock(name, market, code) VALUES ('Cytek Biosciences Inc. Common Stock', 'nasdaq', 'CTKB');
 INSERT INTO stock(name, market, code) VALUES ('Cantaloupe Inc. Common Stock', 'nasdaq', 'CTLP');
@@ -1006,7 +996,7 @@ INSERT INTO stock(name, market, code) VALUES ('Journey Medical Corporation Commo
 INSERT INTO stock(name, market, code) VALUES ('DevvStream Corp. Common Stock', 'nasdaq', 'DEVS');
 INSERT INTO stock(name, market, code) VALUES ('Dragonfly Energy Holdings Corp. Common Stock (NV)', 'nasdaq', 'DFLI');
 INSERT INTO stock(name, market, code) VALUES ('Dragonfly Energy Holdings Corp. Warrant', 'nasdaq', 'DFLIW');
-INSERT INTO stock(name, market, code) VALUES ('Digihost Technology Inc. Common Subordinate Voting Shares', 'nasdaq', 'DGHI');
+INSERT INTO stock(name, market, code) VALUES ('Digi Power X Inc. Subordinate Voting Shares', 'nasdaq', 'DGHI');
 INSERT INTO stock(name, market, code) VALUES ('Donegal Group Inc. Class A Common Stock', 'nasdaq', 'DGICA');
 INSERT INTO stock(name, market, code) VALUES ('Donegal Group Inc. Class B Common Stock', 'nasdaq', 'DGICB');
 INSERT INTO stock(name, market, code) VALUES ('Digi International Inc. Common Stock', 'nasdaq', 'DGII');
@@ -1021,7 +1011,7 @@ INSERT INTO stock(name, market, code) VALUES ('Diversified Healthcare Trust 6.25
 INSERT INTO stock(name, market, code) VALUES ('Diamond Hill Investment Group Inc. Class A Common Stock', 'nasdaq', 'DHIL');
 INSERT INTO stock(name, market, code) VALUES ('1stdibs.com Inc. Common Stock', 'nasdaq', 'DIBS');
 INSERT INTO stock(name, market, code) VALUES ('Diodes Incorporated Common Stock', 'nasdaq', 'DIOD');
-INSERT INTO stock(name, market, code) VALUES ('Distoken Acquisition Corporation Ordinary Shares', 'nasdaq', 'DIST');
+INSERT INTO stock(name, market, code) VALUES ('Distoken Acquisition Corporation Right', 'nasdaq', 'DISTR');
 INSERT INTO stock(name, market, code) VALUES ('Distoken Acquisition Corporation Warrant', 'nasdaq', 'DISTW');
 INSERT INTO stock(name, market, code) VALUES ('Daily Journal Corp. (S.C.) Common Stock', 'nasdaq', 'DJCO');
 INSERT INTO stock(name, market, code) VALUES ('Trump Media & Technology Group Corp. Common Stock', 'nasdaq', 'DJT');
@@ -1032,6 +1022,8 @@ INSERT INTO stock(name, market, code) VALUES ('DLocal Limited Class A Common Sha
 INSERT INTO stock(name, market, code) VALUES ('Dolphin Entertainment Inc. Common Stock', 'nasdaq', 'DLPN');
 INSERT INTO stock(name, market, code) VALUES ('Duluth Holdings Inc. Class B Common Stock', 'nasdaq', 'DLTH');
 INSERT INTO stock(name, market, code) VALUES ('Dollar Tree Inc. Common Stock', 'nasdaq', 'DLTR');
+INSERT INTO stock(name, market, code) VALUES ('Drugs Made In America Acquisition Corp. Ordinary Shares', 'nasdaq', 'DMAA');
+INSERT INTO stock(name, market, code) VALUES ('Drugs Made In America Acquisition Corp. Rights', 'nasdaq', 'DMAAR');
 INSERT INTO stock(name, market, code) VALUES ('Drugs Made In America Acquisition Corp. Units', 'nasdaq', 'DMAAU');
 INSERT INTO stock(name, market, code) VALUES ('DiaMedica Therapeutics Inc. Common Stock', 'nasdaq', 'DMAC');
 INSERT INTO stock(name, market, code) VALUES ('Dorchester Minerals L.P. Common Units Representing Limited Partnership Interests', 'nasdaq', 'DMLP');
@@ -1092,7 +1084,6 @@ INSERT INTO stock(name, market, code) VALUES ('Daxor Corporation Common Stock', 
 INSERT INTO stock(name, market, code) VALUES ('Decent Holding Inc Ordinary Shares', 'nasdaq', 'DXST');
 INSERT INTO stock(name, market, code) VALUES ('Dyadic International Inc. Common Stock', 'nasdaq', 'DYAI');
 INSERT INTO stock(name, market, code) VALUES ('DT Cloud Acquisition Corporation Ordinary Shares', 'nasdaq', 'DYCQ');
-INSERT INTO stock(name, market, code) VALUES ('DT Cloud Acquisition Corporation Right', 'nasdaq', 'DYCQR');
 INSERT INTO stock(name, market, code) VALUES ('Dyne Therapeutics Inc. Common Stock', 'nasdaq', 'DYN');
 INSERT INTO stock(name, market, code) VALUES ('Dynamix Corporation Class A Ordinary Shares', 'nasdaq', 'DYNX');
 INSERT INTO stock(name, market, code) VALUES ('Dynamix Corporation Unit', 'nasdaq', 'DYNXU');
@@ -1105,7 +1096,6 @@ INSERT INTO stock(name, market, code) VALUES ('Ebang International Holdings Inc.
 INSERT INTO stock(name, market, code) VALUES ('Enterprise Bancorp Inc Common Stock', 'nasdaq', 'EBTC');
 INSERT INTO stock(name, market, code) VALUES ('ECB Bancorp Inc. Common Stock', 'nasdaq', 'ECBK');
 INSERT INTO stock(name, market, code) VALUES ('ECD Automotive Design Inc. Common Stock', 'nasdaq', 'ECDA');
-INSERT INTO stock(name, market, code) VALUES ('ECD Automotive Design Inc. Warrant ', 'nasdaq', 'ECDAW');
 INSERT INTO stock(name, market, code) VALUES ('electroCore Inc. Common Stock', 'nasdaq', 'ECOR');
 INSERT INTO stock(name, market, code) VALUES ('Encore Capital Group Inc Common Stock', 'nasdaq', 'ECPG');
 INSERT INTO stock(name, market, code) VALUES ('ECARX Holdings Inc. Class A Ordinary shares', 'nasdaq', 'ECX');
@@ -1126,9 +1116,9 @@ INSERT INTO stock(name, market, code) VALUES ('Enterprise Financial Services Cor
 INSERT INTO stock(name, market, code) VALUES ('Eagle Financial Services Inc Common Stock', 'nasdaq', 'EFSI');
 INSERT INTO stock(name, market, code) VALUES ('eGain Corporation Common Stock', 'nasdaq', 'EGAN');
 INSERT INTO stock(name, market, code) VALUES ('Eagle Bancorp Inc. Common Stock', 'nasdaq', 'EGBN');
-INSERT INTO stock(name, market, code) VALUES ('8x8 Inc Common Stock', 'nasdaq', 'EGHT');
 INSERT INTO stock(name, market, code) VALUES ('EHang Holdings Limited ADS', 'nasdaq', 'EH');
 INSERT INTO stock(name, market, code) VALUES ('Eshallgo Inc. Class A Ordinary Shares', 'nasdaq', 'EHGO');
+INSERT INTO stock(name, market, code) VALUES ('Euroholdings Ltd. Common Stock When Issued', 'nasdaq', 'EHLDV');
 INSERT INTO stock(name, market, code) VALUES ('eHealth Inc. Common Stock', 'nasdaq', 'EHTH');
 INSERT INTO stock(name, market, code) VALUES ('E-Home Household Service Holdings Limited Ordinary Shares', 'nasdaq', 'EJH');
 INSERT INTO stock(name, market, code) VALUES ('Ekso Bionics Holdings Inc. Common Stock', 'nasdaq', 'EKSO');
@@ -1147,8 +1137,6 @@ INSERT INTO stock(name, market, code) VALUES ('Earlyworks Co. Ltd. American Depo
 INSERT INTO stock(name, market, code) VALUES ('Smart Share Global Limited American Depositary Shares', 'nasdaq', 'EM');
 INSERT INTO stock(name, market, code) VALUES ('Embecta Corp. Common Stock', 'nasdaq', 'EMBC');
 INSERT INTO stock(name, market, code) VALUES ('Embrace Change Acquisition Corp Ordinary Shares', 'nasdaq', 'EMCG');
-INSERT INTO stock(name, market, code) VALUES ('Embrace Change Acquisition Corp Rights', 'nasdaq', 'EMCGR');
-INSERT INTO stock(name, market, code) VALUES ('EMCORE Corporation Common Stock', 'nasdaq', 'EMKR');
 INSERT INTO stock(name, market, code) VALUES ('Eastern Company (The) Common Stock', 'nasdaq', 'EML');
 INSERT INTO stock(name, market, code) VALUES ('enGene Holdings Inc. Common Stock', 'nasdaq', 'ENGN');
 INSERT INTO stock(name, market, code) VALUES ('enGene Holdings Inc. Warrants', 'nasdaq', 'ENGNW');
@@ -1180,12 +1168,12 @@ INSERT INTO stock(name, market, code) VALUES ('Energy Recovery Inc. Common Stock
 INSERT INTO stock(name, market, code) VALUES ('Eterna Therapeutics Inc. Common Stock', 'nasdaq', 'ERNA');
 INSERT INTO stock(name, market, code) VALUES ('Escalade Incorporated Common Stock', 'nasdaq', 'ESCA');
 INSERT INTO stock(name, market, code) VALUES ('Euroseas Ltd. Common Stock (Marshall Islands)', 'nasdaq', 'ESEA');
+INSERT INTO stock(name, market, code) VALUES ('Euroseas Ltd. Ex-Distribution When Issued', 'nasdaq', 'ESEAV');
 INSERT INTO stock(name, market, code) VALUES ('ESGL Holdings Limited Ordinary Shares', 'nasdaq', 'ESGL');
-INSERT INTO stock(name, market, code) VALUES ('ESGL Holdings Limited Warrants', 'nasdaq', 'ESGLW');
 INSERT INTO stock(name, market, code) VALUES ('Enstar Group Limited Ordinary Shares', 'nasdaq', 'ESGR');
 INSERT INTO stock(name, market, code) VALUES ('Enstar Group Limited Depository Shares 7.00% Perpetual Non-Cumulative Preference Shares Series E', 'nasdaq', 'ESGRO');
 INSERT INTO stock(name, market, code) VALUES ('Enstar Group Limited Depositary Shares Each Representing 1/1000th of an interest in Preference Shares', 'nasdaq', 'ESGRP');
-INSERT INTO stock(name, market, code) VALUES ('ESH Acquisition Corp. Right', 'nasdaq', 'ESHAR');
+INSERT INTO stock(name, market, code) VALUES ('ESH Acquisition Corp. Class A Common Stock', 'nasdaq', 'ESHA');
 INSERT INTO stock(name, market, code) VALUES ('Estrella Immunopharma Inc. Common Stock', 'nasdaq', 'ESLA');
 INSERT INTO stock(name, market, code) VALUES ('Estrella Immunopharma Inc. Warrant', 'nasdaq', 'ESLAW');
 INSERT INTO stock(name, market, code) VALUES ('Elbit Systems Ltd. Ordinary Shares', 'nasdaq', 'ESLT');
@@ -1201,6 +1189,7 @@ INSERT INTO stock(name, market, code) VALUES ('enCore Energy Corp. Common Shares
 INSERT INTO stock(name, market, code) VALUES ('EUDA Health Holdings Limited Ordinary Shares', 'nasdaq', 'EUDA');
 INSERT INTO stock(name, market, code) VALUES ('EUDA Health Holdings Limited Warrant', 'nasdaq', 'EUDAW');
 INSERT INTO stock(name, market, code) VALUES ('Eureka Acquisition Corp Class A Ordinary Share', 'nasdaq', 'EURK');
+INSERT INTO stock(name, market, code) VALUES ('Eureka Acquisition Corp Right', 'nasdaq', 'EURKR');
 INSERT INTO stock(name, market, code) VALUES ('Eureka Acquisition Corp Unit', 'nasdaq', 'EURKU');
 INSERT INTO stock(name, market, code) VALUES ('Evaxion Biotech A/S American Depositary Share', 'nasdaq', 'EVAX');
 INSERT INTO stock(name, market, code) VALUES ('EverCommerce Inc. Common Stock', 'nasdaq', 'EVCM');
@@ -1240,7 +1229,6 @@ INSERT INTO stock(name, market, code) VALUES ('First Advantage Corporation Commo
 INSERT INTO stock(name, market, code) VALUES ('DigiAsia Corp. Ordinary Shares', 'nasdaq', 'FAAS');
 INSERT INTO stock(name, market, code) VALUES ('DigiAsia Corp. Warrant', 'nasdaq', 'FAASW');
 INSERT INTO stock(name, market, code) VALUES ('FACT II Acquisition Corp. Class A Ordinary Shares', 'nasdaq', 'FACT');
-INSERT INTO stock(name, market, code) VALUES ('FACT II Acquisition Corp. Warrant', 'nasdaq', 'FACTW');
 INSERT INTO stock(name, market, code) VALUES ('Farmmi Inc. Ordinary Shares', 'nasdaq', 'FAMI');
 INSERT INTO stock(name, market, code) VALUES ('Diamondback Energy Inc. Common Stock', 'nasdaq', 'FANG');
 INSERT INTO stock(name, market, code) VALUES ('Farmer Brothers Company Common Stock', 'nasdaq', 'FARM');
@@ -1281,10 +1269,11 @@ INSERT INTO stock(name, market, code) VALUES ('Franklin Electric Co. Inc. Common
 INSERT INTO stock(name, market, code) VALUES ('Femasys Inc. Common Stock', 'nasdaq', 'FEMY');
 INSERT INTO stock(name, market, code) VALUES ('Fennec Pharmaceuticals Inc. Common Stock', 'nasdaq', 'FENC');
 INSERT INTO stock(name, market, code) VALUES ('Ferrovial SE Ordinary Shares', 'nasdaq', 'FER');
+INSERT INTO stock(name, market, code) VALUES ('Fifth Era Acquisition Corp I Units', 'nasdaq', 'FERAU');
+INSERT INTO stock(name, market, code) VALUES ('Faraday Future Intelligent Electric Inc. Class A Common Stock', 'nasdaq', 'FFAI');
+INSERT INTO stock(name, market, code) VALUES ('Faraday Future Intelligent Electric Inc. Warrant', 'nasdaq', 'FFAIW');
 INSERT INTO stock(name, market, code) VALUES ('First Financial Bancorp. Common Stock', 'nasdaq', 'FFBC');
 INSERT INTO stock(name, market, code) VALUES ('Flushing Financial Corporation Common Stock', 'nasdaq', 'FFIC');
-INSERT INTO stock(name, market, code) VALUES ('Faraday Future Intelligent Electric Inc. Class A Common Stock', 'nasdaq', 'FFIE');
-INSERT INTO stock(name, market, code) VALUES ('Faraday Future Intelligent Electric Inc. Warrant', 'nasdaq', 'FFIEW');
 INSERT INTO stock(name, market, code) VALUES ('First Financial Bankshares Inc. Common Stock', 'nasdaq', 'FFIN');
 INSERT INTO stock(name, market, code) VALUES ('F5 Inc. Common Stock', 'nasdaq', 'FFIV');
 INSERT INTO stock(name, market, code) VALUES ('First Financial Northwest Inc. Common Stock', 'nasdaq', 'FFNW');
@@ -1386,7 +1375,6 @@ INSERT INTO stock(name, market, code) VALUES ('Fuel Tech Inc. Common Stock', 'na
 INSERT INTO stock(name, market, code) VALUES ('Fitell Corporation Ordinary Shares', 'nasdaq', 'FTEL');
 INSERT INTO stock(name, market, code) VALUES ('Future FinTech Group Inc. Common Stock', 'nasdaq', 'FTFT');
 INSERT INTO stock(name, market, code) VALUES ('Fathom Holdings Inc. Common Stock', 'nasdaq', 'FTHM');
-INSERT INTO stock(name, market, code) VALUES ('FutureTech II Acquisition Corp. Class A Common Stock', 'nasdaq', 'FTII');
 INSERT INTO stock(name, market, code) VALUES ('FitLife Brands Inc. Common Stock', 'nasdaq', 'FTLF');
 INSERT INTO stock(name, market, code) VALUES ('Fortinet Inc. Common Stock', 'nasdaq', 'FTNT');
 INSERT INTO stock(name, market, code) VALUES ('Fortrea Holdings Inc. Common Stock', 'nasdaq', 'FTRE');
@@ -1401,7 +1389,6 @@ INSERT INTO stock(name, market, code) VALUES ('First US Bancshares Inc. Common S
 INSERT INTO stock(name, market, code) VALUES ('Futu Holdings Limited American Depositary Shares', 'nasdaq', 'FUTU');
 INSERT INTO stock(name, market, code) VALUES ('FVCBankcorp Inc. Common Stock', 'nasdaq', 'FVCB');
 INSERT INTO stock(name, market, code) VALUES ('Future Vision II Acquisition Corporation Ordinary shares', 'nasdaq', 'FVN');
-INSERT INTO stock(name, market, code) VALUES ('Future Vision II Acquisition Corporation Units', 'nasdaq', 'FVNNU');
 INSERT INTO stock(name, market, code) VALUES ('Liberty Media Corporation Series A Liberty Formula One Common Stock', 'nasdaq', 'FWONA');
 INSERT INTO stock(name, market, code) VALUES ('Liberty Media Corporation Series C Liberty Formula One Common Stock', 'nasdaq', 'FWONK');
 INSERT INTO stock(name, market, code) VALUES ('Forward Air Corporation Common Stock', 'nasdaq', 'FWRD');
@@ -1422,11 +1409,10 @@ INSERT INTO stock(name, market, code) VALUES ('GAN Limited Ordinary Shares', 'na
 INSERT INTO stock(name, market, code) VALUES ('Gain Therapeutics Inc. Common Stock', 'nasdaq', 'GANX');
 INSERT INTO stock(name, market, code) VALUES ('StealthGas Inc. Common Stock', 'nasdaq', 'GASS');
 INSERT INTO stock(name, market, code) VALUES ('Marblegate Acquisition Corp. Class A Common Stock', 'nasdaq', 'GATE');
-INSERT INTO stock(name, market, code) VALUES ('Marblegate Acquisition Corp. Warrant', 'nasdaq', 'GATEW');
+INSERT INTO stock(name, market, code) VALUES ('Marblegate Acquisition Corp. Unit', 'nasdaq', 'GATEU');
 INSERT INTO stock(name, market, code) VALUES ('Gauzy Ltd. Ordinary Shares', 'nasdaq', 'GAUZ');
 INSERT INTO stock(name, market, code) VALUES ('Global Blockchain Acquisition Corp. Common Stock', 'nasdaq', 'GBBK');
 INSERT INTO stock(name, market, code) VALUES ('Global Blockchain Acquisition Corp. Right', 'nasdaq', 'GBBKR');
-INSERT INTO stock(name, market, code) VALUES ('Global Blockchain Acquisition Corp. Warrant', 'nasdaq', 'GBBKW');
 INSERT INTO stock(name, market, code) VALUES ('Golub Capital BDC Inc. Common Stock', 'nasdaq', 'GBDC');
 INSERT INTO stock(name, market, code) VALUES ('Generation Bio Co. Common Stock', 'nasdaq', 'GBIO');
 INSERT INTO stock(name, market, code) VALUES ('Greene County Bancorp Inc. Common Stock', 'nasdaq', 'GCBC');
@@ -1439,7 +1425,6 @@ INSERT INTO stock(name, market, code) VALUES ('GlucoTrack Inc. Common Stock', 'n
 INSERT INTO stock(name, market, code) VALUES ('GD Culture Group Limited Common Stock', 'nasdaq', 'GDC');
 INSERT INTO stock(name, market, code) VALUES ('Golden Entertainment Inc. Common Stock', 'nasdaq', 'GDEN');
 INSERT INTO stock(name, market, code) VALUES ('GDEV Inc. Ordinary Shares', 'nasdaq', 'GDEV');
-INSERT INTO stock(name, market, code) VALUES ('GDEV Inc. Warrant', 'nasdaq', 'GDEVW');
 INSERT INTO stock(name, market, code) VALUES ('Golden Heaven Group Holdings Ltd. Class A Ordinary Shares', 'nasdaq', 'GDHG');
 INSERT INTO stock(name, market, code) VALUES ('GoodRx Holdings Inc. Class A Common Stock', 'nasdaq', 'GDRX');
 INSERT INTO stock(name, market, code) VALUES ('GDS Holdings Limited ADS', 'nasdaq', 'GDS');
@@ -1496,10 +1481,6 @@ INSERT INTO stock(name, market, code) VALUES ('Galapagos NV American Depositary 
 INSERT INTO stock(name, market, code) VALUES ('Gaming and Leisure Properties Inc. Common Stock', 'nasdaq', 'GLPI');
 INSERT INTO stock(name, market, code) VALUES ('Greenlight Capital Re Ltd. Class A Ordinary Shares', 'nasdaq', 'GLRE');
 INSERT INTO stock(name, market, code) VALUES ('Greenwich LifeSciences Inc. Common Stock', 'nasdaq', 'GLSI');
-INSERT INTO stock(name, market, code) VALUES ('Global Star Acquisition Inc. Class A Common Stock', 'nasdaq', 'GLST');
-INSERT INTO stock(name, market, code) VALUES ('Global Star Acquisition Inc. Right', 'nasdaq', 'GLSTR');
-INSERT INTO stock(name, market, code) VALUES ('Global Star Acquisition Inc. Unit', 'nasdaq', 'GLSTU');
-INSERT INTO stock(name, market, code) VALUES ('Global Star Acquisition Inc. Warrants', 'nasdaq', 'GLSTW');
 INSERT INTO stock(name, market, code) VALUES ('Galecto Inc. Common Stock', 'nasdaq', 'GLTO');
 INSERT INTO stock(name, market, code) VALUES ('Monte Rosa Therapeutics Inc. Common Stock', 'nasdaq', 'GLUE');
 INSERT INTO stock(name, market, code) VALUES ('Galaxy Payroll Group Limited Ordinary Shares', 'nasdaq', 'GLXG');
@@ -1556,6 +1537,7 @@ INSERT INTO stock(name, market, code) VALUES ('GSI Technology Common Stock', 'na
 INSERT INTO stock(name, market, code) VALUES ('Garden Stage Limited Ordinary Shares', 'nasdaq', 'GSIW');
 INSERT INTO stock(name, market, code) VALUES ('Ferroglobe PLC Ordinary Shares', 'nasdaq', 'GSM');
 INSERT INTO stock(name, market, code) VALUES ('GSR III Acquisition Corp. Ordinary Shares', 'nasdaq', 'GSRT');
+INSERT INTO stock(name, market, code) VALUES ('GSR III Acquisition Corp. Right', 'nasdaq', 'GSRTR');
 INSERT INTO stock(name, market, code) VALUES ('GSR III Acquisition Corp. Unit', 'nasdaq', 'GSRTU');
 INSERT INTO stock(name, market, code) VALUES ('Golden Sun Health Technology Group Limited Class A Ordinary Shares', 'nasdaq', 'GSUN');
 INSERT INTO stock(name, market, code) VALUES ('The Goodyear Tire & Rubber Company Common Stock', 'nasdaq', 'GT');
@@ -1591,11 +1573,9 @@ INSERT INTO stock(name, market, code) VALUES ('Huachen AI Parking Management Tec
 INSERT INTO stock(name, market, code) VALUES ('Health Catalyst Inc Common Stock', 'nasdaq', 'HCAT');
 INSERT INTO stock(name, market, code) VALUES ('Hackett Group Inc (The). Common Stock', 'nasdaq', 'HCKT');
 INSERT INTO stock(name, market, code) VALUES ('HUTCHMED (China) Limited American Depositary Shares', 'nasdaq', 'HCM');
-INSERT INTO stock(name, market, code) VALUES ('HashiCorp Inc. Class A Common Stock', 'nasdaq', 'HCP');
 INSERT INTO stock(name, market, code) VALUES ('Healthcare Services Group Inc. Common Stock', 'nasdaq', 'HCSG');
 INSERT INTO stock(name, market, code) VALUES ('Healthcare Triangle Inc. Common Stock', 'nasdaq', 'HCTI');
 INSERT INTO stock(name, market, code) VALUES ('Hennessy Capital Investment Corp. VI Class A Common Stock', 'nasdaq', 'HCVI');
-INSERT INTO stock(name, market, code) VALUES ('Hennessy Capital Investment Corp. VI Unit', 'nasdaq', 'HCVIU');
 INSERT INTO stock(name, market, code) VALUES ('Hennessy Capital Investment Corp. VI Warrant', 'nasdaq', 'HCVIW');
 INSERT INTO stock(name, market, code) VALUES ('HCW Biologics Inc. Common Stock', 'nasdaq', 'HCWB');
 INSERT INTO stock(name, market, code) VALUES ('SUPER HI INTERNATIONAL HOLDING LTD. American Depositary Shares', 'nasdaq', 'HDL');
@@ -1638,7 +1618,6 @@ INSERT INTO stock(name, market, code) VALUES ('MicroCloud Hologram Inc. Warrant'
 INSERT INTO stock(name, market, code) VALUES ('Hologic Inc. Common Stock', 'nasdaq', 'HOLX');
 INSERT INTO stock(name, market, code) VALUES ('Honeywell International Inc. Common Stock', 'nasdaq', 'HON');
 INSERT INTO stock(name, market, code) VALUES ('HCM II Acquisition Corp. Class A Ordinary Shares', 'nasdaq', 'HOND');
-INSERT INTO stock(name, market, code) VALUES ('HCM II Acquisition Corp. Unit', 'nasdaq', 'HONDU');
 INSERT INTO stock(name, market, code) VALUES ('HCM II Acquisition Corp. Warrant', 'nasdaq', 'HONDW');
 INSERT INTO stock(name, market, code) VALUES ('HarborOne Bancorp Inc. Common Stock', 'nasdaq', 'HONE');
 INSERT INTO stock(name, market, code) VALUES ('Robinhood Markets Inc. Class A Common Stock', 'nasdaq', 'HOOD');
@@ -1665,18 +1644,19 @@ INSERT INTO stock(name, market, code) VALUES ('Heron Therapeutics Inc. Common St
 INSERT INTO stock(name, market, code) VALUES ('Horizon Technology Finance Corporation Common Stock', 'nasdaq', 'HRZN');
 INSERT INTO stock(name, market, code) VALUES ('Hesai Group American Depositary Share each ADS represents one Class B ordinary share', 'nasdaq', 'HSAI');
 INSERT INTO stock(name, market, code) VALUES ('HeartSciences Inc. Common Stock', 'nasdaq', 'HSCS');
+INSERT INTO stock(name, market, code) VALUES ('HeartSciences Inc. Warrant', 'nasdaq', 'HSCSW');
 INSERT INTO stock(name, market, code) VALUES ('Helius Medical Technologies Inc. Class A Common Stock (DE)', 'nasdaq', 'HSDT');
 INSERT INTO stock(name, market, code) VALUES ('Henry Schein Inc. Common Stock', 'nasdaq', 'HSIC');
 INSERT INTO stock(name, market, code) VALUES ('Heidrick & Struggles International Inc. Common Stock', 'nasdaq', 'HSII');
 INSERT INTO stock(name, market, code) VALUES ('Hudson Global Inc. Common Stock', 'nasdaq', 'HSON');
 INSERT INTO stock(name, market, code) VALUES ('Horizon Space Acquisition I Corp. Ordinary Shares', 'nasdaq', 'HSPO');
 INSERT INTO stock(name, market, code) VALUES ('Horizon Space Acquisition I Corp. Right', 'nasdaq', 'HSPOR');
+INSERT INTO stock(name, market, code) VALUES ('Horizon Space Acquisition I Corp. Unit', 'nasdaq', 'HSPOU');
 INSERT INTO stock(name, market, code) VALUES ('Horizon Space Acquisition I Corp. Warrant', 'nasdaq', 'HSPOW');
-INSERT INTO stock(name, market, code) VALUES ('Horizon Space Acquisition II Corp. Ordinary share', 'nasdaq', 'HSPT');
 INSERT INTO stock(name, market, code) VALUES ('Horizon Space Acquisition II Corp. Right', 'nasdaq', 'HSPTR');
+INSERT INTO stock(name, market, code) VALUES ('Horizon Space Acquisition II Corp. Units', 'nasdaq', 'HSPTU');
 INSERT INTO stock(name, market, code) VALUES ('Host Hotels & Resorts Inc. Common Stock', 'nasdaq', 'HST');
 INSERT INTO stock(name, market, code) VALUES ('HealthStream Inc. Common Stock', 'nasdaq', 'HSTM');
-INSERT INTO stock(name, market, code) VALUES ('HomeTrust Bancshares Inc. Common Stock', 'nasdaq', 'HTBI');
 INSERT INTO stock(name, market, code) VALUES ('Heritage Commerce Corp Common Stock', 'nasdaq', 'HTBK');
 INSERT INTO stock(name, market, code) VALUES ('High-Trend International Group Class A Ordinary Shares', 'nasdaq', 'HTCO');
 INSERT INTO stock(name, market, code) VALUES ('Heartcore Enterprises Inc. Common Stock', 'nasdaq', 'HTCR');
@@ -1721,6 +1701,7 @@ INSERT INTO stock(name, market, code) VALUES ('IB Acquisition Corp. Right', 'nas
 INSERT INTO stock(name, market, code) VALUES ('Independent Bank Corporation Common Stock', 'nasdaq', 'IBCP');
 INSERT INTO stock(name, market, code) VALUES ('IBEX Limited Common Shares', 'nasdaq', 'IBEX');
 INSERT INTO stock(name, market, code) VALUES ('Innovation Beverage Group Limited Ordinary Shares', 'nasdaq', 'IBG');
+INSERT INTO stock(name, market, code) VALUES ('iBio Inc. Common Stock', 'nasdaq', 'IBIO');
 INSERT INTO stock(name, market, code) VALUES ('Interactive Brokers Group Inc. Class A Common Stock', 'nasdaq', 'IBKR');
 INSERT INTO stock(name, market, code) VALUES ('International Bancshares Corporation Common Stock', 'nasdaq', 'IBOC');
 INSERT INTO stock(name, market, code) VALUES ('ImmunityBio Inc. Common Stock', 'nasdaq', 'IBRX');
@@ -1794,7 +1775,6 @@ INSERT INTO stock(name, market, code) VALUES ('Independent Bank Corp. Common Sto
 INSERT INTO stock(name, market, code) VALUES ('indie Semiconductor Inc. Class A Common Stock', 'nasdaq', 'INDI');
 INSERT INTO stock(name, market, code) VALUES ('Indaptus Therapeutics Inc. Common Stock', 'nasdaq', 'INDP');
 INSERT INTO stock(name, market, code) VALUES ('Indivior PLC Ordinary Shares', 'nasdaq', 'INDV');
-INSERT INTO stock(name, market, code) VALUES ('Infinera Corporation Common Stock', 'nasdaq', 'INFN');
 INSERT INTO stock(name, market, code) VALUES ('Inogen Inc Common Stock', 'nasdaq', 'INGN');
 INSERT INTO stock(name, market, code) VALUES ('Inno Holdings Inc. Common Stock', 'nasdaq', 'INHD');
 INSERT INTO stock(name, market, code) VALUES ('MiNK Therapeutics Inc. Common Stock', 'nasdaq', 'INKT');
@@ -1811,7 +1791,7 @@ INSERT INTO stock(name, market, code) VALUES ('Insmed Incorporated Common Stock'
 INSERT INTO stock(name, market, code) VALUES ('Intapp Inc. Common Stock', 'nasdaq', 'INTA');
 INSERT INTO stock(name, market, code) VALUES ('Intel Corporation Common Stock', 'nasdaq', 'INTC');
 INSERT INTO stock(name, market, code) VALUES ('Intergroup Corporation (The) Common Stock', 'nasdaq', 'INTG');
-INSERT INTO stock(name, market, code) VALUES ('Intelligent Group Limited Ordinary Shares', 'nasdaq', 'INTJ');
+INSERT INTO stock(name, market, code) VALUES ('Intelligent Group Limited Class A Ordinary Shares ', 'nasdaq', 'INTJ');
 INSERT INTO stock(name, market, code) VALUES ('Inter & Co. Inc. Class A Common Shares', 'nasdaq', 'INTR');
 INSERT INTO stock(name, market, code) VALUES ('Intensity Therapeutics Inc. Common stock', 'nasdaq', 'INTS');
 INSERT INTO stock(name, market, code) VALUES ('Intuit Inc. Common Stock', 'nasdaq', 'INTU');
@@ -1838,6 +1818,7 @@ INSERT INTO stock(name, market, code) VALUES ('iPower Inc. Common Stock', 'nasda
 INSERT INTO stock(name, market, code) VALUES ('Ideal Power Inc. Common Stock', 'nasdaq', 'IPWR');
 INSERT INTO stock(name, market, code) VALUES ('IperionX Limited American Depositary Share', 'nasdaq', 'IPX');
 INSERT INTO stock(name, market, code) VALUES ('Inflection Point Acquisition Corp. II Class A Ordinary Share', 'nasdaq', 'IPXX');
+INSERT INTO stock(name, market, code) VALUES ('Inflection Point Acquisition Corp. II Unit', 'nasdaq', 'IPXXU');
 INSERT INTO stock(name, market, code) VALUES ('Inflection Point Acquisition Corp. II Warrant', 'nasdaq', 'IPXXW');
 INSERT INTO stock(name, market, code) VALUES ('iQIYI Inc. American Depositary Shares', 'nasdaq', 'IQ');
 INSERT INTO stock(name, market, code) VALUES ('iRobot Corporation Common Stock', 'nasdaq', 'IRBT');
@@ -1859,7 +1840,6 @@ INSERT INTO stock(name, market, code) VALUES ('Inspirato Incorporated Warrant', 
 INSERT INTO stock(name, market, code) VALUES ('Ispire Technology Inc. Common Stock', 'nasdaq', 'ISPR');
 INSERT INTO stock(name, market, code) VALUES ('Intuitive Surgical Inc. Common Stock', 'nasdaq', 'ISRG');
 INSERT INTO stock(name, market, code) VALUES ('Israel Acquisitions Corp Class A Ordinary Shares', 'nasdaq', 'ISRL');
-INSERT INTO stock(name, market, code) VALUES ('Israel Acquisitions Corp Unit', 'nasdaq', 'ISRLU');
 INSERT INTO stock(name, market, code) VALUES ('Israel Acquisitions Corp Warrant', 'nasdaq', 'ISRLW');
 INSERT INTO stock(name, market, code) VALUES ('Innovative Solutions and Support Inc. Common Stock', 'nasdaq', 'ISSC');
 INSERT INTO stock(name, market, code) VALUES ('Investar Holding Corporation Common Stock', 'nasdaq', 'ISTR');
@@ -1872,6 +1852,7 @@ INSERT INTO stock(name, market, code) VALUES ('Ituran Location and Control Ltd. 
 INSERT INTO stock(name, market, code) VALUES ('Inventiva S.A. American Depository Shares', 'nasdaq', 'IVA');
 INSERT INTO stock(name, market, code) VALUES ('Intevac Inc. Common Stock', 'nasdaq', 'IVAC');
 INSERT INTO stock(name, market, code) VALUES ('Investcorp AI Acquisition Corp. Class A Ordinary Share', 'nasdaq', 'IVCA');
+INSERT INTO stock(name, market, code) VALUES ('Investcorp AI Acquisition Corp. Unit', 'nasdaq', 'IVCAU');
 INSERT INTO stock(name, market, code) VALUES ('Iveda Solutions Inc. Common Stock', 'nasdaq', 'IVDA');
 INSERT INTO stock(name, market, code) VALUES ('Iveda Solutions Inc. Warrant', 'nasdaq', 'IVDAW');
 INSERT INTO stock(name, market, code) VALUES ('Inspire Veterinary Partners Inc. Class A Common Stock', 'nasdaq', 'IVP');
@@ -1893,6 +1874,7 @@ INSERT INTO stock(name, market, code) VALUES ('JE Cleantech Holdings Limited Ord
 INSERT INTO stock(name, market, code) VALUES ('Jewett-Cameron Trading Company Common Shares', 'nasdaq', 'JCTC');
 INSERT INTO stock(name, market, code) VALUES ('JD.com Inc. American Depositary Shares', 'nasdaq', 'JD');
 INSERT INTO stock(name, market, code) VALUES ('JIADE LIMITED Common stock', 'nasdaq', 'JDZG');
+INSERT INTO stock(name, market, code) VALUES ('JFB Construction Holdings Class A Common Stock', 'nasdaq', 'JFB');
 INSERT INTO stock(name, market, code) VALUES ('Jeffs\' Brands Ltd Ordinary Shares', 'nasdaq', 'JFBR');
 INSERT INTO stock(name, market, code) VALUES ('Jeffs\' Brands Ltd Warrant', 'nasdaq', 'JFBRW');
 INSERT INTO stock(name, market, code) VALUES ('Jiayin Group Inc. American Depositary Shares', 'nasdaq', 'JFIN');
@@ -1908,7 +1890,6 @@ INSERT INTO stock(name, market, code) VALUES ('Jerash Holdings (US) Inc. Common 
 INSERT INTO stock(name, market, code) VALUES ('James River Group Holdings Ltd. Common Shares', 'nasdaq', 'JRVR');
 INSERT INTO stock(name, market, code) VALUES ('Navient Corporation 6% Senior Notes due December 15 2043', 'nasdaq', 'JSM');
 INSERT INTO stock(name, market, code) VALUES ('Jasper Therapeutics Inc. Common Stock', 'nasdaq', 'JSPR');
-INSERT INTO stock(name, market, code) VALUES ('Japer Therapeutics Inc. Warrants', 'nasdaq', 'JSPRW');
 INSERT INTO stock(name, market, code) VALUES ('Jet.AI Inc. Common Stock', 'nasdaq', 'JTAI');
 INSERT INTO stock(name, market, code) VALUES ('Junee Limited Ordinary Shares', 'nasdaq', 'JUNE');
 INSERT INTO stock(name, market, code) VALUES ('Jupiter Neurosciences Inc. Common Stock', 'nasdaq', 'JUNS');
@@ -1950,6 +1931,7 @@ INSERT INTO stock(name, market, code) VALUES ('Klotho Neurosciences Inc. Warrant
 INSERT INTO stock(name, market, code) VALUES ('Kaltura Inc. Common Stock', 'nasdaq', 'KLTR');
 INSERT INTO stock(name, market, code) VALUES ('KLX Energy Services Holdings Inc. Common Stock', 'nasdaq', 'KLXE');
 INSERT INTO stock(name, market, code) VALUES ('Kamada Ltd. Ordinary Shares', 'nasdaq', 'KMDA');
+INSERT INTO stock(name, market, code) VALUES ('Kestra Medical Technologies Ltd. Common Stock', 'nasdaq', 'KMTS');
 INSERT INTO stock(name, market, code) VALUES ('Kandi Technologies Group Inc. Ordinary Shares', 'nasdaq', 'KNDI');
 INSERT INTO stock(name, market, code) VALUES ('Kiniksa Pharmaceuticals International plc Class A Ordinary Shares', 'nasdaq', 'KNSA');
 INSERT INTO stock(name, market, code) VALUES ('Kodiak Sciences Inc Common Stock', 'nasdaq', 'KOD');
@@ -1974,6 +1956,7 @@ INSERT INTO stock(name, market, code) VALUES ('Joint Stock Company Kaspi.kz Amer
 INSERT INTO stock(name, market, code) VALUES ('Key Tronic Corporation Common Stock', 'nasdaq', 'KTCC');
 INSERT INTO stock(name, market, code) VALUES ('Kratos Defense & Security Solutions Inc. Common Stock', 'nasdaq', 'KTOS');
 INSERT INTO stock(name, market, code) VALUES ('Pasithea Therapeutics Corp. Common Stock', 'nasdaq', 'KTTA');
+INSERT INTO stock(name, market, code) VALUES ('Pasithea Therapeutics Corp. Warrant', 'nasdaq', 'KTTAW');
 INSERT INTO stock(name, market, code) VALUES ('Kura Oncology Inc. Common Stock', 'nasdaq', 'KURA');
 INSERT INTO stock(name, market, code) VALUES ('Keen Vision Acquisition Corporation Ordinary Shares', 'nasdaq', 'KVAC');
 INSERT INTO stock(name, market, code) VALUES ('Keen Vision Acquisition Corporation Warrant', 'nasdaq', 'KVACW');
@@ -2042,7 +2025,7 @@ INSERT INTO stock(name, market, code) VALUES ('Largo Inc. Common Shares', 'nasda
 INSERT INTO stock(name, market, code) VALUES ('Logility Supply Chain Solutions Inc. Common Stock', 'nasdaq', 'LGTY');
 INSERT INTO stock(name, market, code) VALUES ('Longeveron Inc. Class A Common Stock', 'nasdaq', 'LGVN');
 INSERT INTO stock(name, market, code) VALUES ('Li Auto Inc. American Depositary Shares', 'nasdaq', 'LI');
-INSERT INTO stock(name, market, code) VALUES ('Lichen China Limited Class A Ordinary Shares', 'nasdaq', 'LICN');
+INSERT INTO stock(name, market, code) VALUES ('Lichen International Limited Class A Ordinary Shares', 'nasdaq', 'LICN');
 INSERT INTO stock(name, market, code) VALUES ('AEye Inc. Class A Common Stock', 'nasdaq', 'LIDR');
 INSERT INTO stock(name, market, code) VALUES ('AEye Inc. Warrant', 'nasdaq', 'LIDRW');
 INSERT INTO stock(name, market, code) VALUES ('Chicago Atlantic BDC Inc. Common Stock', 'nasdaq', 'LIEN');
@@ -2062,7 +2045,6 @@ INSERT INTO stock(name, market, code) VALUES ('Snow Lake Resources Ltd. Common S
 INSERT INTO stock(name, market, code) VALUES ('Live Ventures Incorporated Common Stock', 'nasdaq', 'LIVE');
 INSERT INTO stock(name, market, code) VALUES ('LivaNova PLC Ordinary Shares', 'nasdaq', 'LIVN');
 INSERT INTO stock(name, market, code) VALUES ('Lixte Biotechnology Holdings Inc. Common Stock', 'nasdaq', 'LIXT');
-INSERT INTO stock(name, market, code) VALUES ('Lixte Biotechnology Holdings Inc. Warrants', 'nasdaq', 'LIXTW');
 INSERT INTO stock(name, market, code) VALUES ('Luokung Technology Corp Ordinary Shares', 'nasdaq', 'LKCO');
 INSERT INTO stock(name, market, code) VALUES ('Lakeland Financial Corporation Common Stock', 'nasdaq', 'LKFN');
 INSERT INTO stock(name, market, code) VALUES ('LKQ Corporation Common Stock', 'nasdaq', 'LKQ');
@@ -2085,6 +2067,7 @@ INSERT INTO stock(name, market, code) VALUES ('LOBO EV TECHNOLOGIES LTD. Ordinar
 INSERT INTO stock(name, market, code) VALUES ('El Pollo Loco Holdings Inc. Common Stock', 'nasdaq', 'LOCO');
 INSERT INTO stock(name, market, code) VALUES ('ContextLogic Inc. Class A Common Stock', 'nasdaq', 'LOGC');
 INSERT INTO stock(name, market, code) VALUES ('Logitech International S.A. Ordinary Shares', 'nasdaq', 'LOGI');
+INSERT INTO stock(name, market, code) VALUES ('Live Oak Acquisition Corp. V Units', 'nasdaq', 'LOKVU');
 INSERT INTO stock(name, market, code) VALUES ('Loop Industries Inc. Common Stock', 'nasdaq', 'LOOP');
 INSERT INTO stock(name, market, code) VALUES ('Grand Canyon Education Inc. Common Stock', 'nasdaq', 'LOPE');
 INSERT INTO stock(name, market, code) VALUES ('Lotus Technology Inc. American Depositary Shares', 'nasdaq', 'LOT');
@@ -2131,7 +2114,6 @@ INSERT INTO stock(name, market, code) VALUES ('Innovative Eyewear Inc. Series A 
 INSERT INTO stock(name, market, code) VALUES ('lululemon athletica inc. Common Stock', 'nasdaq', 'LULU');
 INSERT INTO stock(name, market, code) VALUES ('Pulmonx Corporation Common Stock', 'nasdaq', 'LUNG');
 INSERT INTO stock(name, market, code) VALUES ('Intuitive Machines Inc. Class A Common Stock', 'nasdaq', 'LUNR');
-INSERT INTO stock(name, market, code) VALUES ('Intuitive Machines Inc. Warrants', 'nasdaq', 'LUNRW');
 INSERT INTO stock(name, market, code) VALUES ('Lulu\'s Fashion Lounge Holdings Inc. Common Stock', 'nasdaq', 'LVLU');
 INSERT INTO stock(name, market, code) VALUES ('LiveOne Inc. Common Stock', 'nasdaq', 'LVO');
 INSERT INTO stock(name, market, code) VALUES ('Lavoro Limited Class A Ordinary Shares', 'nasdaq', 'LVRO');
@@ -2149,6 +2131,7 @@ INSERT INTO stock(name, market, code) VALUES ('Lyra Therapeutics Inc. Common Sto
 INSERT INTO stock(name, market, code) VALUES ('Lytus Technologies Holdings PTV. Ltd. Common Shares', 'nasdaq', 'LYT');
 INSERT INTO stock(name, market, code) VALUES ('LSI Industries Inc. Common Stock', 'nasdaq', 'LYTS');
 INSERT INTO stock(name, market, code) VALUES ('LegalZoom.com Inc. Common Stock', 'nasdaq', 'LZ');
+INSERT INTO stock(name, market, code) VALUES ('LZ Technology Holdings Limited Class B Ordinary Shares', 'nasdaq', 'LZMH');
 INSERT INTO stock(name, market, code) VALUES ('Melar Acquisition Corp. I Class A Ordinary Shares', 'nasdaq', 'MACI');
 INSERT INTO stock(name, market, code) VALUES ('Melar Acquisition Corp. I Warrant', 'nasdaq', 'MACIW');
 INSERT INTO stock(name, market, code) VALUES ('Mama\'s Creations Inc. Common Stock', 'nasdaq', 'MAMA');
@@ -2166,11 +2149,13 @@ INSERT INTO stock(name, market, code) VALUES ('Mattel Inc. Common Stock', 'nasda
 INSERT INTO stock(name, market, code) VALUES ('Metalpha Technology Holding Limited Ordinary Shares', 'nasdaq', 'MATH');
 INSERT INTO stock(name, market, code) VALUES ('Matthews International Corporation Class A Common Stock', 'nasdaq', 'MATW');
 INSERT INTO stock(name, market, code) VALUES ('Maxeon Solar Technologies Ltd. Ordinary Shares', 'nasdaq', 'MAXN');
+INSERT INTO stock(name, market, code) VALUES ('Maywood Acquisition Corp. Class A Ordinary Shares', 'nasdaq', 'MAYA');
+INSERT INTO stock(name, market, code) VALUES ('Maywood Acquisition Corp. Right', 'nasdaq', 'MAYAR');
 INSERT INTO stock(name, market, code) VALUES ('Maywood Acquisition Corp. Unit', 'nasdaq', 'MAYAU');
 INSERT INTO stock(name, market, code) VALUES ('J. W. Mays Inc. Common Stock', 'nasdaq', 'MAYS');
 INSERT INTO stock(name, market, code) VALUES ('Maze Therapeutics Inc. Common Stock', 'nasdaq', 'MAZE');
 INSERT INTO stock(name, market, code) VALUES ('M3-Brigade Acquisition V Corp. Class A Ordinary shares', 'nasdaq', 'MBAV');
-INSERT INTO stock(name, market, code) VALUES ('M3-Brigade Acquisition V Corp. Units', 'nasdaq', 'MBAVU');
+INSERT INTO stock(name, market, code) VALUES ('M3-Brigade Acquisition V Corp. Warrant', 'nasdaq', 'MBAVW');
 INSERT INTO stock(name, market, code) VALUES ('Middlefield Banc Corp. Common Stock', 'nasdaq', 'MBCN');
 INSERT INTO stock(name, market, code) VALUES ('Merchants Bancorp Common Stock', 'nasdaq', 'MBIN');
 INSERT INTO stock(name, market, code) VALUES ('Merchants Bancorp Depositary Shares Each Representing a 1/40thInterest in a Share of 7.25% Fixed Rate Series E Non-CumulativePerpetual Preferred Stock without par value', 'nasdaq', 'MBINL');
@@ -2248,7 +2233,6 @@ INSERT INTO stock(name, market, code) VALUES ('Mirum Pharmaceuticals Inc. Common
 INSERT INTO stock(name, market, code) VALUES ('Milestone Pharmaceuticals Inc. Common Shares', 'nasdaq', 'MIST');
 INSERT INTO stock(name, market, code) VALUES ('Mitek Systems Inc. Common Stock', 'nasdaq', 'MITK');
 INSERT INTO stock(name, market, code) VALUES ('MKDWELL Tech Inc. Ordinary Share', 'nasdaq', 'MKDW');
-INSERT INTO stock(name, market, code) VALUES ('MKDWELL Tech Inc. Warrants', 'nasdaq', 'MKDWW');
 INSERT INTO stock(name, market, code) VALUES ('MKS Instruments Inc. Common Stock', 'nasdaq', 'MKSI');
 INSERT INTO stock(name, market, code) VALUES ('MarketWise Inc. Class A Common Stock', 'nasdaq', 'MKTW');
 INSERT INTO stock(name, market, code) VALUES ('MarketAxess Holdings Inc. Common Stock', 'nasdaq', 'MKTX');
@@ -2317,7 +2301,6 @@ INSERT INTO stock(name, market, code) VALUES ('Maravai LifeSciences Holdings Inc
 INSERT INTO stock(name, market, code) VALUES ('Marvell Technology Inc. Common Stock', 'nasdaq', 'MRVL');
 INSERT INTO stock(name, market, code) VALUES ('Marex Group plc Ordinary Shares', 'nasdaq', 'MRX');
 INSERT INTO stock(name, market, code) VALUES ('MultiSensor AI Holdings Inc. Common Stock', 'nasdaq', 'MSAI');
-INSERT INTO stock(name, market, code) VALUES ('MultiSensor AI Holdings Inc. Warrant', 'nasdaq', 'MSAIW');
 INSERT INTO stock(name, market, code) VALUES ('Midland States Bancorp Inc. Common Stock', 'nasdaq', 'MSBI');
 INSERT INTO stock(name, market, code) VALUES ('Midland States Bancorp Inc. Depositary Shares Each Representing a 1/40th Interest in a Share of 7.750% Fixed-Rate Reset Non-Cumulative Perpetual Preferred Stock Series A', 'nasdaq', 'MSBIP');
 INSERT INTO stock(name, market, code) VALUES ('Middlesex Water Company Common Stock', 'nasdaq', 'MSEX');
@@ -2327,7 +2310,6 @@ INSERT INTO stock(name, market, code) VALUES ('MSP Recovery Inc. Class A Common 
 INSERT INTO stock(name, market, code) VALUES ('MSP Recovery Inc. Warrant', 'nasdaq', 'MSPRW');
 INSERT INTO stock(name, market, code) VALUES ('Maison Solutions Inc. Class A Common Stock', 'nasdaq', 'MSS');
 INSERT INTO stock(name, market, code) VALUES ('Metal Sky Star Acquisition Corporation Ordinary shares', 'nasdaq', 'MSSA');
-INSERT INTO stock(name, market, code) VALUES ('Metal Sky Star Acquisition Corporation Right', 'nasdaq', 'MSSAR');
 INSERT INTO stock(name, market, code) VALUES ('Metal Sky Star Acquisition Corporation Unit', 'nasdaq', 'MSSAU');
 INSERT INTO stock(name, market, code) VALUES ('Metal Sky Star Acquisition Corporation Warrant', 'nasdaq', 'MSSAW');
 INSERT INTO stock(name, market, code) VALUES ('MicroStrategy Incorporated Common Stock Class A', 'nasdaq', 'MSTR');
@@ -2342,7 +2324,6 @@ INSERT INTO stock(name, market, code) VALUES ('Materialise NV American Depositar
 INSERT INTO stock(name, market, code) VALUES ('Matrix Service Company Common Stock', 'nasdaq', 'MTRX');
 INSERT INTO stock(name, market, code) VALUES ('MACOM Technology Solutions Holdings Inc. Common Stock', 'nasdaq', 'MTSI');
 INSERT INTO stock(name, market, code) VALUES ('Metsera Inc. Common Stock', 'nasdaq', 'MTSR');
-INSERT INTO stock(name, market, code) VALUES ('Matterport Inc. Class A Common Stock', 'nasdaq', 'MTTR');
 INSERT INTO stock(name, market, code) VALUES ('MetaVia Inc. Common Stock', 'nasdaq', 'MTVA');
 INSERT INTO stock(name, market, code) VALUES ('Micron Technology Inc. Common Stock', 'nasdaq', 'MU');
 INSERT INTO stock(name, market, code) VALUES ('Mullen Automotive Inc. Common Stock', 'nasdaq', 'MULN');
@@ -2386,7 +2367,6 @@ INSERT INTO stock(name, market, code) VALUES ('National CineMedia Inc. Common St
 INSERT INTO stock(name, market, code) VALUES ('NuCana plc American Depositary Share', 'nasdaq', 'NCNA');
 INSERT INTO stock(name, market, code) VALUES ('nCino Inc. Common Stock', 'nasdaq', 'NCNO');
 INSERT INTO stock(name, market, code) VALUES ('Netcapital Inc. Common Stock', 'nasdaq', 'NCPL');
-INSERT INTO stock(name, market, code) VALUES ('Netcapital Inc. Warrants', 'nasdaq', 'NCPLW');
 INSERT INTO stock(name, market, code) VALUES ('Nocera Inc. Common Stock', 'nasdaq', 'NCRA');
 INSERT INTO stock(name, market, code) VALUES ('NCS Multistage Holdings Inc. Common Stock', 'nasdaq', 'NCSM');
 INSERT INTO stock(name, market, code) VALUES ('The9 Limited American Depository Shares', 'nasdaq', 'NCTY');
@@ -2422,6 +2402,7 @@ INSERT INTO stock(name, market, code) VALUES ('Northfield Bancorp Inc. Common St
 INSERT INTO stock(name, market, code) VALUES ('New Fortress Energy Inc. Class A Common Stock', 'nasdaq', 'NFE');
 INSERT INTO stock(name, market, code) VALUES ('Netflix Inc. Common Stock', 'nasdaq', 'NFLX');
 INSERT INTO stock(name, market, code) VALUES ('Neurogene Inc. Common Stock ', 'nasdaq', 'NGNE');
+INSERT INTO stock(name, market, code) VALUES ('NewHold Investment Corp III Units', 'nasdaq', 'NHICU');
 INSERT INTO stock(name, market, code) VALUES ('National Healthcare Properties Inc. 7.375% Series A Cumulative Redeemable Perpetual Preferred Stock', 'nasdaq', 'NHPAP');
 INSERT INTO stock(name, market, code) VALUES ('National Healthcare Properties Inc. 7.125% Series B Cumulative Redeemable Perpetual Preferred Stock', 'nasdaq', 'NHPBP');
 INSERT INTO stock(name, market, code) VALUES ('Natural Health Trends Corp. Common Stock', 'nasdaq', 'NHTC');
@@ -2435,9 +2416,6 @@ INSERT INTO stock(name, market, code) VALUES ('NewGenIvf Group Limited Class A O
 INSERT INTO stock(name, market, code) VALUES ('NewGenIvf Group Limited Warrants', 'nasdaq', 'NIVFW');
 INSERT INTO stock(name, market, code) VALUES ('Nixxy Inc. Common Stock', 'nasdaq', 'NIXX');
 INSERT INTO stock(name, market, code) VALUES ('Nixxy Inc. Warrant', 'nasdaq', 'NIXXW');
-INSERT INTO stock(name, market, code) VALUES ('NKGen Biotech Inc. Common Stock', 'nasdaq', 'NKGN');
-INSERT INTO stock(name, market, code) VALUES ('NKGen Biotech Inc. Warrants', 'nasdaq', 'NKGNW');
-INSERT INTO stock(name, market, code) VALUES ('Nikola Corporation Common Stock', 'nasdaq', 'NKLA');
 INSERT INTO stock(name, market, code) VALUES ('National Bankshares Inc. Common Stock', 'nasdaq', 'NKSH');
 INSERT INTO stock(name, market, code) VALUES ('Nektar Therapeutics  Common Stock', 'nasdaq', 'NKTR');
 INSERT INTO stock(name, market, code) VALUES ('Nkarta Inc. Common Stock', 'nasdaq', 'NKTX');
@@ -2551,7 +2529,6 @@ INSERT INTO stock(name, market, code) VALUES ('New York Mortgage Trust Inc. 8.00
 INSERT INTO stock(name, market, code) VALUES ('New York Mortgage Trust Inc. 7.000% Series G Cumulative Redeemable Preferred Stock $0.01 par value per share', 'nasdaq', 'NYMTZ');
 INSERT INTO stock(name, market, code) VALUES ('Nyxoah SA Ordinary Shares', 'nasdaq', 'NYXH');
 INSERT INTO stock(name, market, code) VALUES ('OmniAb Inc. Common Stock', 'nasdaq', 'OABI');
-INSERT INTO stock(name, market, code) VALUES ('OmniAb Inc. Warrant', 'nasdaq', 'OABIW');
 INSERT INTO stock(name, market, code) VALUES ('Oaktree Acquisition Corp. III Life Sciences Class A Ordinary Share', 'nasdaq', 'OACC');
 INSERT INTO stock(name, market, code) VALUES ('Oaktree Acquisition Corp. III Life Sciences Unit', 'nasdaq', 'OACCU');
 INSERT INTO stock(name, market, code) VALUES ('Oaktree Acquisition Corp. III Life Sciences Warrant', 'nasdaq', 'OACCW');
@@ -2582,7 +2559,6 @@ INSERT INTO stock(name, market, code) VALUES ('Oncocyte Corporation Common Stock
 INSERT INTO stock(name, market, code) VALUES ('ODDITY Tech Ltd. Class A Ordinary Shares', 'nasdaq', 'ODD');
 INSERT INTO stock(name, market, code) VALUES ('Old Dominion Freight Line Inc. Common Stock', 'nasdaq', 'ODFL');
 INSERT INTO stock(name, market, code) VALUES ('The ODP Corporation Common Stock', 'nasdaq', 'ODP');
-INSERT INTO stock(name, market, code) VALUES ('Osisko Development Corp. Warrant expiring 5/27/2027', 'nasdaq', 'ODVWZ');
 INSERT INTO stock(name, market, code) VALUES ('Odysight.ai Inc. Common Stock', 'nasdaq', 'ODYS');
 INSERT INTO stock(name, market, code) VALUES ('Orion Energy Systems Inc. Common Stock', 'nasdaq', 'OESX');
 INSERT INTO stock(name, market, code) VALUES ('Orthofix Medical Inc. Common Stock (DE)', 'nasdaq', 'OFIX');
@@ -2604,9 +2580,7 @@ INSERT INTO stock(name, market, code) VALUES ('Old Market Capital Corporation Co
 INSERT INTO stock(name, market, code) VALUES ('Omnicell Inc. Common Stock ($0.001 par value)', 'nasdaq', 'OMCL');
 INSERT INTO stock(name, market, code) VALUES ('Omeros Corporation Common Stock', 'nasdaq', 'OMER');
 INSERT INTO stock(name, market, code) VALUES ('Odyssey Marine Exploration Inc. Common Stock', 'nasdaq', 'OMEX');
-INSERT INTO stock(name, market, code) VALUES ('Omega Therapeutics Inc. Common Stock', 'nasdaq', 'OMGA');
 INSERT INTO stock(name, market, code) VALUES ('Ohmyhome Limited Ordinary Shares', 'nasdaq', 'OMH');
-INSERT INTO stock(name, market, code) VALUES ('Singular Genomics Systems Inc. Common Stock', 'nasdaq', 'OMIC');
 INSERT INTO stock(name, market, code) VALUES ('ON Semiconductor Corporation Common Stock', 'nasdaq', 'ON');
 INSERT INTO stock(name, market, code) VALUES ('Old National Bancorp Common Stock', 'nasdaq', 'ONB');
 INSERT INTO stock(name, market, code) VALUES ('Old National Bancorp Depositary Shares Each Representing a 1/40th Interest in a Share of Series C Preferred Stock', 'nasdaq', 'ONBPO');
@@ -2618,7 +2592,6 @@ INSERT INTO stock(name, market, code) VALUES ('Ondas Holdings Inc. Common Stock'
 INSERT INTO stock(name, market, code) VALUES ('OneConstruction Group Limited Ordinary Shares', 'nasdaq', 'ONEG');
 INSERT INTO stock(name, market, code) VALUES ('OneWater Marine Inc. Class A Common Stock', 'nasdaq', 'ONEW');
 INSERT INTO stock(name, market, code) VALUES ('Onfolio Holdings Inc. Common Stock', 'nasdaq', 'ONFO');
-INSERT INTO stock(name, market, code) VALUES ('Onfolio Holdings Inc. Warrant', 'nasdaq', 'ONFOW');
 INSERT INTO stock(name, market, code) VALUES ('OneMedNet Corp Class A Common Stock', 'nasdaq', 'ONMD');
 INSERT INTO stock(name, market, code) VALUES ('OneMedNet Corp Warrant', 'nasdaq', 'ONMDW');
 INSERT INTO stock(name, market, code) VALUES ('Organovo Holdings Inc. Common Stock', 'nasdaq', 'ONVO');
@@ -2673,6 +2646,7 @@ INSERT INTO stock(name, market, code) VALUES ('Oak Valley Bancorp (CA) Common St
 INSERT INTO stock(name, market, code) VALUES ('Oxbridge Re Holdings Limited Ordinary Shares', 'nasdaq', 'OXBR');
 INSERT INTO stock(name, market, code) VALUES ('Oxbridge Re Holdings Limited Warrant expiring 3/26/2029', 'nasdaq', 'OXBRW');
 INSERT INTO stock(name, market, code) VALUES ('Oxford Lane Capital Corp. Common Stock', 'nasdaq', 'OXLC');
+INSERT INTO stock(name, market, code) VALUES ('Oxford Lane Capital Corp. 7.95% Notes due 2032', 'nasdaq', 'OXLCG');
 INSERT INTO stock(name, market, code) VALUES ('Oxford Lane Capital Corp. 8.75% Notes due 2030', 'nasdaq', 'OXLCI');
 INSERT INTO stock(name, market, code) VALUES ('Oxford Lane Capital Corp. 6.75% Notes due 2031', 'nasdaq', 'OXLCL');
 INSERT INTO stock(name, market, code) VALUES ('Oxford Lane Capital Corp. 7.125% Series 2029 Term Preferred Stock', 'nasdaq', 'OXLCN');
@@ -2749,7 +2723,6 @@ INSERT INTO stock(name, market, code) VALUES ('Wag! Group Co Warrant', 'nasdaq',
 INSERT INTO stock(name, market, code) VALUES ('TDH Holdings Inc. Common Shares', 'nasdaq', 'PETZ');
 INSERT INTO stock(name, market, code) VALUES ('Phoenix Motor Inc. Common Stock', 'nasdaq', 'PEV');
 INSERT INTO stock(name, market, code) VALUES ('Preferred Bank Common Stock', 'nasdaq', 'PFBC');
-INSERT INTO stock(name, market, code) VALUES ('Premier Financial Corp. Common Stock', 'nasdaq', 'PFC');
 INSERT INTO stock(name, market, code) VALUES ('Principal Financial Group Inc Common Stock', 'nasdaq', 'PFG');
 INSERT INTO stock(name, market, code) VALUES ('Peoples Financial Services Corp. Common Stock', 'nasdaq', 'PFIS');
 INSERT INTO stock(name, market, code) VALUES ('PhenixFIN Corporation Common Stock', 'nasdaq', 'PFX');
@@ -2783,7 +2756,6 @@ INSERT INTO stock(name, market, code) VALUES ('PLBY Group Inc. Common Stock', 'n
 INSERT INTO stock(name, market, code) VALUES ('Children\'s Place Inc. (The) Common Stock', 'nasdaq', 'PLCE');
 INSERT INTO stock(name, market, code) VALUES ('Piedmont Lithium Inc. Common Stock', 'nasdaq', 'PLL');
 INSERT INTO stock(name, market, code) VALUES ('Plum Acquisition Corp. IV Class A Ordinary Shares', 'nasdaq', 'PLMK');
-INSERT INTO stock(name, market, code) VALUES ('Plum Acquisition Corp. IV Unit', 'nasdaq', 'PLMKU');
 INSERT INTO stock(name, market, code) VALUES ('Plum Acquisition Corp. IV Warrants', 'nasdaq', 'PLMKW');
 INSERT INTO stock(name, market, code) VALUES ('Palomar Holdings Inc. Common stock', 'nasdaq', 'PLMR');
 INSERT INTO stock(name, market, code) VALUES ('Preformed Line Products Company Common Stock', 'nasdaq', 'PLPC');
@@ -2804,6 +2776,7 @@ INSERT INTO stock(name, market, code) VALUES ('Primech Holdings Ltd. Ordinary Sh
 INSERT INTO stock(name, market, code) VALUES ('ProMIS Neurosciences Inc. Common Shares (ON)', 'nasdaq', 'PMN');
 INSERT INTO stock(name, market, code) VALUES ('CPI Card Group Inc. Common Stock', 'nasdaq', 'PMTS');
 INSERT INTO stock(name, market, code) VALUES ('PMV Pharmaceuticals Inc. Common Stock', 'nasdaq', 'PMVP');
+INSERT INTO stock(name, market, code) VALUES ('Skycorp Solar Group Limited Ordinary Shares', 'nasdaq', 'PN');
 INSERT INTO stock(name, market, code) VALUES ('Patriot National Bancorp Inc. Common Stock', 'nasdaq', 'PNBK');
 INSERT INTO stock(name, market, code) VALUES ('Pinnacle Financial Partners Inc. Common Stock', 'nasdaq', 'PNFP');
 INSERT INTO stock(name, market, code) VALUES ('Pinnacle Financial Partners Inc. Depositary shares of Pinnacle Financial Partners Inc. each representing a 1/40th Interest in a share of its 6.75% Fixed-Rate Non-Cumulative Perpetual Preferred Stock Series B', 'nasdaq', 'PNFPP');
@@ -2913,9 +2886,6 @@ INSERT INTO stock(name, market, code) VALUES ('QuinStreet Inc. Common Stock', 'n
 INSERT INTO stock(name, market, code) VALUES ('Quantum Biopharma Ltd. Class B Subordinate Voting Shares', 'nasdaq', 'QNTM');
 INSERT INTO stock(name, market, code) VALUES ('Nuveen NASDAQ 100 Dynamic Overwrite Fund Shares of Beneficial Interest', 'nasdaq', 'QQQX');
 INSERT INTO stock(name, market, code) VALUES ('Quest Resource Holding Corporation Common Stock', 'nasdaq', 'QRHC');
-INSERT INTO stock(name, market, code) VALUES ('Qurate Retail Inc. Series A Common Stock', 'nasdaq', 'QRTEA');
-INSERT INTO stock(name, market, code) VALUES ('Qurate Retail Inc. Series B Common Stock', 'nasdaq', 'QRTEB');
-INSERT INTO stock(name, market, code) VALUES ('Qurate Retail Inc. 8.0% Fixed Rate Cumulative Redeemable Preferred Stock', 'nasdaq', 'QRTEP');
 INSERT INTO stock(name, market, code) VALUES ('Qorvo Inc. Common Stock', 'nasdaq', 'QRVO');
 INSERT INTO stock(name, market, code) VALUES ('QuantaSing Group Limited American Depositary Shares', 'nasdaq', 'QSG');
 INSERT INTO stock(name, market, code) VALUES ('Quantum-Si Incorporated Class A Common Stock', 'nasdaq', 'QSI');
@@ -2925,6 +2895,9 @@ INSERT INTO stock(name, market, code) VALUES ('Q32 Bio Inc. Common Stock', 'nasd
 INSERT INTO stock(name, market, code) VALUES ('Quantum Computing Inc. Common Stock', 'nasdaq', 'QUBT');
 INSERT INTO stock(name, market, code) VALUES ('QuickLogic Corporation Common Stock', 'nasdaq', 'QUIK');
 INSERT INTO stock(name, market, code) VALUES ('uniQure N.V. Ordinary Shares', 'nasdaq', 'QURE');
+INSERT INTO stock(name, market, code) VALUES ('QVC Group Inc. Series A Common Stock', 'nasdaq', 'QVCGA');
+INSERT INTO stock(name, market, code) VALUES ('QVC Group Inc. Series B Common Stock', 'nasdaq', 'QVCGB');
+INSERT INTO stock(name, market, code) VALUES ('QVC Group Inc. 8.0% Fixed Rate Cumulative Redeemable Preferred Stock', 'nasdaq', 'QVCGP');
 INSERT INTO stock(name, market, code) VALUES ('Radiopharm Theranostics Limited American Depositary Shares', 'nasdaq', 'RADX');
 INSERT INTO stock(name, market, code) VALUES ('FreightCar America Inc. Common Stock', 'nasdaq', 'RAIL');
 INSERT INTO stock(name, market, code) VALUES ('Rain Enhancement Technologies Holdco Inc. Class A Common Stock', 'nasdaq', 'RAIN');
@@ -2952,10 +2925,9 @@ INSERT INTO stock(name, market, code) VALUES ('Rocky Brands Inc. Common Stock', 
 INSERT INTO stock(name, market, code) VALUES ('RCM Technologies Inc. Common Stock', 'nasdaq', 'RCMT');
 INSERT INTO stock(name, market, code) VALUES ('Recon Technology Ltd. Class A Ordinary Shares', 'nasdaq', 'RCON');
 INSERT INTO stock(name, market, code) VALUES ('Rising Dragon Acquisition Corp. Ordinary Shares', 'nasdaq', 'RDAC');
-INSERT INTO stock(name, market, code) VALUES ('Rising Dragon Acquisition Corp. Rights', 'nasdaq', 'RDACR');
-INSERT INTO stock(name, market, code) VALUES ('Rising Dragon Acquisition Corp. Unit', 'nasdaq', 'RDACU');
 INSERT INTO stock(name, market, code) VALUES ('Radcom Ltd. Ordinary Shares', 'nasdaq', 'RDCM');
 INSERT INTO stock(name, market, code) VALUES ('Redfin Corporation Common Stock', 'nasdaq', 'RDFN');
+INSERT INTO stock(name, market, code) VALUES ('Ridgetech Inc. Ordinary Shares', 'nasdaq', 'RDGT');
 INSERT INTO stock(name, market, code) VALUES ('Redhill Biopharma Ltd. American Depositary Shares', 'nasdaq', 'RDHL');
 INSERT INTO stock(name, market, code) VALUES ('Reading International Inc Class A Common Stock', 'nasdaq', 'RDI');
 INSERT INTO stock(name, market, code) VALUES ('Reading International Inc Class B Common Stock', 'nasdaq', 'RDIB');
@@ -2964,7 +2936,6 @@ INSERT INTO stock(name, market, code) VALUES ('Radius Recycling Inc. Class A Com
 INSERT INTO stock(name, market, code) VALUES ('Red Violet Inc. Common Stock ', 'nasdaq', 'RDVT');
 INSERT INTO stock(name, market, code) VALUES ('Radware Ltd. Ordinary Shares', 'nasdaq', 'RDWR');
 INSERT INTO stock(name, market, code) VALUES ('Roadzen Inc. Ordinary Shares', 'nasdaq', 'RDZN');
-INSERT INTO stock(name, market, code) VALUES ('Roadzen Inc. Warrants', 'nasdaq', 'RDZNW');
 INSERT INTO stock(name, market, code) VALUES ('The RealReal Inc. Common Stock', 'nasdaq', 'REAL');
 INSERT INTO stock(name, market, code) VALUES ('The Real Brokerage Inc. Common Shares', 'nasdaq', 'REAX');
 INSERT INTO stock(name, market, code) VALUES ('Reborn Coffee Inc. Common Stock', 'nasdaq', 'REBN');
@@ -2983,7 +2954,6 @@ INSERT INTO stock(name, market, code) VALUES ('Richardson Electronics Ltd. Commo
 INSERT INTO stock(name, market, code) VALUES ('Remitly Global Inc. Common Stock', 'nasdaq', 'RELY');
 INSERT INTO stock(name, market, code) VALUES ('Renovaro Inc. Common Stock', 'nasdaq', 'RENB');
 INSERT INTO stock(name, market, code) VALUES ('Cartesian Growth Corporation II Class A Ordinary Shares', 'nasdaq', 'RENE');
-INSERT INTO stock(name, market, code) VALUES ('Cartesian Growth Corporation II Warrant', 'nasdaq', 'RENEW');
 INSERT INTO stock(name, market, code) VALUES ('Rent the Runway Inc. Class A Common Stock', 'nasdaq', 'RENT');
 INSERT INTO stock(name, market, code) VALUES ('Replimune Group Inc. Common Stock', 'nasdaq', 'REPL');
 INSERT INTO stock(name, market, code) VALUES ('ReTo Eco-Solutions Inc. Class A Shares', 'nasdaq', 'RETO');
@@ -2991,7 +2961,6 @@ INSERT INTO stock(name, market, code) VALUES ('Revelation Biosciences Inc. Commo
 INSERT INTO stock(name, market, code) VALUES ('Revelation Biosciences Inc. Warrant', 'nasdaq', 'REVBW');
 INSERT INTO stock(name, market, code) VALUES ('Reynolds Consumer Products Inc. Common Stock', 'nasdaq', 'REYN');
 INSERT INTO stock(name, market, code) VALUES ('RF Acquisition Corp II Ordinary Shares', 'nasdaq', 'RFAI');
-INSERT INTO stock(name, market, code) VALUES ('RF Acquisition Corp II Right', 'nasdaq', 'RFAIR');
 INSERT INTO stock(name, market, code) VALUES ('RF Industries Ltd. Common Stock', 'nasdaq', 'RFIL');
 INSERT INTO stock(name, market, code) VALUES ('Regencell Bioscience Holdings Limited Ordinary Shares', 'nasdaq', 'RGC');
 INSERT INTO stock(name, market, code) VALUES ('RGC Resources Inc. Common Stock', 'nasdaq', 'RGCO');
@@ -3003,7 +2972,9 @@ INSERT INTO stock(name, market, code) VALUES ('Resources Connection Inc. Common 
 INSERT INTO stock(name, market, code) VALUES ('Regis Corporation Common Stock', 'nasdaq', 'RGS');
 INSERT INTO stock(name, market, code) VALUES ('Rigetti Computing Inc. Common Stock', 'nasdaq', 'RGTI');
 INSERT INTO stock(name, market, code) VALUES ('Rigetti Computing Inc. Warrants', 'nasdaq', 'RGTIW');
-INSERT INTO stock(name, market, code) VALUES ('Resolute Holdings Management Common Stock Ex-distribution When-Issued', 'nasdaq', 'RHLDV');
+INSERT INTO stock(name, market, code) VALUES ('Resolute Holdings Management Common Stock ', 'nasdaq', 'RHLD');
+INSERT INTO stock(name, market, code) VALUES ('Ribbon Acquisition Corp Class A Ordinary Shares', 'nasdaq', 'RIBB');
+INSERT INTO stock(name, market, code) VALUES ('Ribbon Acquisition Corp Rights', 'nasdaq', 'RIBBR');
 INSERT INTO stock(name, market, code) VALUES ('Ribbon Acquisition Corp Unit', 'nasdaq', 'RIBBU');
 INSERT INTO stock(name, market, code) VALUES ('RCI Hospitality Holdings Inc. Common Stock', 'nasdaq', 'RICK');
 INSERT INTO stock(name, market, code) VALUES ('Rigel Pharmaceuticals Inc. Common Stock', 'nasdaq', 'RIGL');
@@ -3011,7 +2982,6 @@ INSERT INTO stock(name, market, code) VALUES ('B. Riley Financial Inc. Common St
 INSERT INTO stock(name, market, code) VALUES ('B. Riley Financial Inc. 5.00% Senior Notes due 2026', 'nasdaq', 'RILYG');
 INSERT INTO stock(name, market, code) VALUES ('B. Riley Financial Inc. 5.50% Senior Notes Due 2026', 'nasdaq', 'RILYK');
 INSERT INTO stock(name, market, code) VALUES ('B. Riley Financial Inc. Depositary Shares each representing 1/1000th in a share of 7.375% Series B Cumulative Perpetual Preferred Stock par value $0.0001', 'nasdaq', 'RILYL');
-INSERT INTO stock(name, market, code) VALUES ('B. Riley Financial Inc. 6.375% Senior Notes due 2025', 'nasdaq', 'RILYM');
 INSERT INTO stock(name, market, code) VALUES ('B. Riley Financial Inc. 6.50% Senior Notes Due 2026', 'nasdaq', 'RILYN');
 INSERT INTO stock(name, market, code) VALUES ('B. Riley Financial Inc. Depositary Shares each representing a 1/1000th fractional interest in a share of Series A Cumulative Perpetual Preferred Stock', 'nasdaq', 'RILYP');
 INSERT INTO stock(name, market, code) VALUES ('B. Riley Financial Inc. 6.00% Senior Notes Due 2028', 'nasdaq', 'RILYT');
@@ -3030,7 +3000,6 @@ INSERT INTO stock(name, market, code) VALUES ('RumbleOn Inc. Class B Common Stoc
 INSERT INTO stock(name, market, code) VALUES ('Rambus Inc. Common Stock', 'nasdaq', 'RMBS');
 INSERT INTO stock(name, market, code) VALUES ('Rocky Mountain Chocolate Factory Inc. Common Stock', 'nasdaq', 'RMCF');
 INSERT INTO stock(name, market, code) VALUES ('Royalty Management Holding Corporation Class A Common Stock', 'nasdaq', 'RMCO');
-INSERT INTO stock(name, market, code) VALUES ('Royalty Management Holding Corporation Warrant', 'nasdaq', 'RMCOW');
 INSERT INTO stock(name, market, code) VALUES ('Rimini Street Inc. (DE) Common Stock', 'nasdaq', 'RMNI');
 INSERT INTO stock(name, market, code) VALUES ('The RMR Group Inc. Class A Common Stock', 'nasdaq', 'RMR');
 INSERT INTO stock(name, market, code) VALUES ('Real Messenger Corporation Ordinary Shares', 'nasdaq', 'RMSG');
@@ -3095,9 +3064,11 @@ INSERT INTO stock(name, market, code) VALUES ('SAB Biotherapeutics Inc. Warrant'
 INSERT INTO stock(name, market, code) VALUES ('Safety Insurance Group Inc. Common Stock', 'nasdaq', 'SAFT');
 INSERT INTO stock(name, market, code) VALUES ('SAG Holdings Limited Ordinary Shares', 'nasdaq', 'SAG');
 INSERT INTO stock(name, market, code) VALUES ('Sage Therapeutics Inc. Common Stock', 'nasdaq', 'SAGE');
+INSERT INTO stock(name, market, code) VALUES ('SAGTEC GLOBAL LIMITED Ordinary shares', 'nasdaq', 'SAGT');
 INSERT INTO stock(name, market, code) VALUES ('Saia Inc. Common Stock', 'nasdaq', 'SAIA');
 INSERT INTO stock(name, market, code) VALUES ('Science Applications International Corporation Common Stock', 'nasdaq', 'SAIC');
 INSERT INTO stock(name, market, code) VALUES ('SAIHEAT Limited Class A Ordinary Shares', 'nasdaq', 'SAIH');
+INSERT INTO stock(name, market, code) VALUES ('SAIHEAT Limited Warrant', 'nasdaq', 'SAIHW');
 INSERT INTO stock(name, market, code) VALUES ('SailPoint Inc. Common Stock', 'nasdaq', 'SAIL');
 INSERT INTO stock(name, market, code) VALUES ('Silvercrest Asset Management Group Inc. Class A Common Stock', 'nasdaq', 'SAMG');
 INSERT INTO stock(name, market, code) VALUES ('Sana Biotechnology Inc. Common Stock', 'nasdaq', 'SANA');
@@ -3214,6 +3185,7 @@ INSERT INTO stock(name, market, code) VALUES ('Scienjoy Holding Corporation Clas
 INSERT INTO stock(name, market, code) VALUES ('SJW Group Common Stock', 'nasdaq', 'SJW');
 INSERT INTO stock(name, market, code) VALUES ('Skyline Builders Group Holding Limited Class A Ordinary Shares', 'nasdaq', 'SKBL');
 INSERT INTO stock(name, market, code) VALUES ('SK Growth Opportunities Corporation Class A Common Stock', 'nasdaq', 'SKGR');
+INSERT INTO stock(name, market, code) VALUES ('SK Growth Opportunities Corporation Unit', 'nasdaq', 'SKGRU');
 INSERT INTO stock(name, market, code) VALUES ('SK Growth Opportunities Corporation Warrant', 'nasdaq', 'SKGRW');
 INSERT INTO stock(name, market, code) VALUES ('The Beauty Health Company Class A Common Stock', 'nasdaq', 'SKIN');
 INSERT INTO stock(name, market, code) VALUES ('SKK Holdings Limited Ordinary Shares', 'nasdaq', 'SKK');
@@ -3247,7 +3219,7 @@ INSERT INTO stock(name, market, code) VALUES ('Southern Missouri Bancorp Inc. Co
 INSERT INTO stock(name, market, code) VALUES ('Super Micro Computer Inc. Common Stock', 'nasdaq', 'SMCI');
 INSERT INTO stock(name, market, code) VALUES ('Smith-Midland Corporation Common Stock', 'nasdaq', 'SMID');
 INSERT INTO stock(name, market, code) VALUES ('Semler Scientific Inc. Common Stock', 'nasdaq', 'SMLR');
-INSERT INTO stock(name, market, code) VALUES ('Summit Therapeutics Inc. Common Stock ', 'nasdaq', 'SMMT');
+INSERT INTO stock(name, market, code) VALUES ('The Simply Good Foods Company Common Stock', 'nasdaq', 'SMPL');
 INSERT INTO stock(name, market, code) VALUES ('Smith Micro Software Inc. Common Stock', 'nasdaq', 'SMSI');
 INSERT INTO stock(name, market, code) VALUES ('Semtech Corporation Common Stock', 'nasdaq', 'SMTC');
 INSERT INTO stock(name, market, code) VALUES ('Sanara MedTech Inc. Common Stock', 'nasdaq', 'SMTI');
@@ -3261,7 +3233,7 @@ INSERT INTO stock(name, market, code) VALUES ('Synchronoss Technologies Inc. Com
 INSERT INTO stock(name, market, code) VALUES ('Synchronoss Technologies Inc. 8.375% Senior Notes due 2026', 'nasdaq', 'SNCRL');
 INSERT INTO stock(name, market, code) VALUES ('Sun Country Airlines Holdings Inc. Common Stock', 'nasdaq', 'SNCY');
 INSERT INTO stock(name, market, code) VALUES ('Smart Sand Inc. Common Stock', 'nasdaq', 'SND');
-INSERT INTO stock(name, market, code) VALUES ('Sandisk Corporation Common Stock When-Issued', 'nasdaq', 'SNDKV');
+INSERT INTO stock(name, market, code) VALUES ('Sandisk Corporation Common Stock', 'nasdaq', 'SNDK');
 INSERT INTO stock(name, market, code) VALUES ('SNDL Inc. Common Shares', 'nasdaq', 'SNDL');
 INSERT INTO stock(name, market, code) VALUES ('Syndax Pharmaceuticals Inc. Common Stock', 'nasdaq', 'SNDX');
 INSERT INTO stock(name, market, code) VALUES ('SenesTech Inc. Common Stock', 'nasdaq', 'SNES');
@@ -3276,6 +3248,7 @@ INSERT INTO stock(name, market, code) VALUES ('Sensei Biotherapeutics Inc. Commo
 INSERT INTO stock(name, market, code) VALUES ('Senstar Technologies Corporation Common Shares', 'nasdaq', 'SNT');
 INSERT INTO stock(name, market, code) VALUES ('Sentage Holdings Inc. Class A Ordinary Shares', 'nasdaq', 'SNTG');
 INSERT INTO stock(name, market, code) VALUES ('Senti Biosciences Inc. Common Stock', 'nasdaq', 'SNTI');
+INSERT INTO stock(name, market, code) VALUES ('SANUWAVE Health Inc. Common Stock', 'nasdaq', 'SNWV');
 INSERT INTO stock(name, market, code) VALUES ('Sanofi ADS', 'nasdaq', 'SNY');
 INSERT INTO stock(name, market, code) VALUES ('Synergy CHC Corp. Common Stock', 'nasdaq', 'SNYR');
 INSERT INTO stock(name, market, code) VALUES ('SOBR Safe Inc. Common Stock', 'nasdaq', 'SOBR');
@@ -3302,9 +3275,10 @@ INSERT INTO stock(name, market, code) VALUES ('SuperCom Ltd. Ordinary Shares (Is
 INSERT INTO stock(name, market, code) VALUES ('South Plains Financial Inc. Common Stock', 'nasdaq', 'SPFI');
 INSERT INTO stock(name, market, code) VALUES ('Sacks Parente Golf Inc. Common Stock', 'nasdaq', 'SPGC');
 INSERT INTO stock(name, market, code) VALUES ('Shepherd Ave Capital Acquisition Corporation Class A Ordinary shares', 'nasdaq', 'SPHA');
-INSERT INTO stock(name, market, code) VALUES ('Shepherd Ave Capital Acquisition Corporation Right', 'nasdaq', 'SPHAR');
+INSERT INTO stock(name, market, code) VALUES ('Shepherd Ave Capital Acquisition Corporation Unit', 'nasdaq', 'SPHAU');
 INSERT INTO stock(name, market, code) VALUES ('Springview Holdings Ltd Class A Ordinary Shares', 'nasdaq', 'SPHL');
 INSERT INTO stock(name, market, code) VALUES ('Spark I Acquisition Corp. Class A Ordinary Share', 'nasdaq', 'SPKL');
+INSERT INTO stock(name, market, code) VALUES ('Spark I Acquisition Corp. Unit', 'nasdaq', 'SPKLU');
 INSERT INTO stock(name, market, code) VALUES ('Spark I Acquisition Corp. Warrant', 'nasdaq', 'SPKLW');
 INSERT INTO stock(name, market, code) VALUES ('Sapiens International Corporation N.V. Common Shares (Cayman Islands)', 'nasdaq', 'SPNS');
 INSERT INTO stock(name, market, code) VALUES ('Spok Holdings Inc. Common Stock', 'nasdaq', 'SPOK');
@@ -3342,6 +3316,7 @@ INSERT INTO stock(name, market, code) VALUES ('SoundThinking Inc. Common Stock',
 INSERT INTO stock(name, market, code) VALUES ('Stratasys Ltd. Ordinary Shares (Israel)', 'nasdaq', 'SSYS');
 INSERT INTO stock(name, market, code) VALUES ('STAAR Surgical Company Common Stock', 'nasdaq', 'STAA');
 INSERT INTO stock(name, market, code) VALUES ('ScanTech AI Systems Inc. Common stock', 'nasdaq', 'STAI');
+INSERT INTO stock(name, market, code) VALUES ('STAK Inc. Ordinary Shares', 'nasdaq', 'STAK');
 INSERT INTO stock(name, market, code) VALUES ('S&T Bancorp Inc. Common Stock', 'nasdaq', 'STBA');
 INSERT INTO stock(name, market, code) VALUES ('Starbox Group Holdings Ltd. Class A Ordinary Shares', 'nasdaq', 'STBX');
 INSERT INTO stock(name, market, code) VALUES ('Santech Holdings Limited American Depositary Shares', 'nasdaq', 'STEC');
@@ -3377,7 +3352,6 @@ INSERT INTO stock(name, market, code) VALUES ('Supernus Pharmaceuticals Inc. Com
 INSERT INTO stock(name, market, code) VALUES ('SurgePays Inc. Common Stock', 'nasdaq', 'SURG');
 INSERT INTO stock(name, market, code) VALUES ('SolarBank Corporation Common Stock', 'nasdaq', 'SUUN');
 INSERT INTO stock(name, market, code) VALUES ('Service Properties Trust Common Stock', 'nasdaq', 'SVC');
-INSERT INTO stock(name, market, code) VALUES ('Stellar V Capital Corp. Unit', 'nasdaq', 'SVCCU');
 INSERT INTO stock(name, market, code) VALUES ('Silvaco Group Inc. Common Stock', 'nasdaq', 'SVCO');
 INSERT INTO stock(name, market, code) VALUES ('Spring Valley Acquisition Corp. II Class A Ordinary Shares', 'nasdaq', 'SVII');
 INSERT INTO stock(name, market, code) VALUES ('Spring Valley Acquisition Corp. II Rights', 'nasdaq', 'SVIIR');
@@ -3422,11 +3396,11 @@ INSERT INTO stock(name, market, code) VALUES ('Tarsus Pharmaceuticals Inc. Commo
 INSERT INTO stock(name, market, code) VALUES ('TaskUs Inc. Class A Common Stock', 'nasdaq', 'TASK');
 INSERT INTO stock(name, market, code) VALUES ('TAT Technologies Ltd. Ordinary Shares', 'nasdaq', 'TATT');
 INSERT INTO stock(name, market, code) VALUES ('Tavia Acquisition Corp. Ordinary Shares', 'nasdaq', 'TAVI');
-INSERT INTO stock(name, market, code) VALUES ('Tavia Acquisition Corp. Right', 'nasdaq', 'TAVIR');
 INSERT INTO stock(name, market, code) VALUES ('Tavia Acquisition Corp. Unit', 'nasdaq', 'TAVIU');
 INSERT INTO stock(name, market, code) VALUES ('Taylor Devices Inc. Common Stock', 'nasdaq', 'TAYD');
 INSERT INTO stock(name, market, code) VALUES ('The Bancorp Inc Common Stock', 'nasdaq', 'TBBK');
 INSERT INTO stock(name, market, code) VALUES ('Turtle Beach Corporation Common Stock', 'nasdaq', 'TBCH');
+INSERT INTO stock(name, market, code) VALUES ('Brag House Holdings Inc. Common Stock', 'nasdaq', 'TBH');
 INSERT INTO stock(name, market, code) VALUES ('Taboola.com Ltd. Ordinary Shares', 'nasdaq', 'TBLA');
 INSERT INTO stock(name, market, code) VALUES ('Taboola.com Ltd. Warrant', 'nasdaq', 'TBLAW');
 INSERT INTO stock(name, market, code) VALUES ('Thornburg Income Builder Opportunities Trust Common Stock', 'nasdaq', 'TBLD');
@@ -3435,7 +3409,7 @@ INSERT INTO stock(name, market, code) VALUES ('Trailblazer Merger Corporation I 
 INSERT INTO stock(name, market, code) VALUES ('Territorial Bancorp Inc. Common Stock', 'nasdaq', 'TBNK');
 INSERT INTO stock(name, market, code) VALUES ('Theravance Biopharma Inc. Ordinary Shares', 'nasdaq', 'TBPH');
 INSERT INTO stock(name, market, code) VALUES ('TruBridge Inc. Common Stock', 'nasdaq', 'TBRG');
-INSERT INTO stock(name, market, code) VALUES ('TuanChe Limited American Depositary Shares', 'nasdaq', 'TC');
+INSERT INTO stock(name, market, code) VALUES ('Token Cat Limited American Depositary Shares', 'nasdaq', 'TC');
 INSERT INTO stock(name, market, code) VALUES ('Texas Capital Bancshares Inc. Common Stock', 'nasdaq', 'TCBI');
 INSERT INTO stock(name, market, code) VALUES ('Texas Capital Bancshares Inc. Depositary Shares 5.75% Fixed Rate Non-Cumulative Perpetual Preferred Stock Series B', 'nasdaq', 'TCBIO');
 INSERT INTO stock(name, market, code) VALUES ('TriCo Bancshares Common Stock', 'nasdaq', 'TCBK');
@@ -3527,6 +3501,7 @@ INSERT INTO stock(name, market, code) VALUES ('Tempest Therapeutics Inc. Common 
 INSERT INTO stock(name, market, code) VALUES ('Traws Pharma Inc. Common Stock', 'nasdaq', 'TRAW');
 INSERT INTO stock(name, market, code) VALUES ('Entrada Therapeutics Inc. Common Stock', 'nasdaq', 'TRDA');
 INSERT INTO stock(name, market, code) VALUES ('LendingTree Inc. Common Stock', 'nasdaq', 'TREE');
+INSERT INTO stock(name, market, code) VALUES ('Thomson Reuters Corporation Common Shares', 'nasdaq', 'TRI');
 INSERT INTO stock(name, market, code) VALUES ('Trinity Biotech plc American Depositary Shares', 'nasdaq', 'TRIB');
 INSERT INTO stock(name, market, code) VALUES ('Trinity Capital Inc. Common Stock', 'nasdaq', 'TRIN');
 INSERT INTO stock(name, market, code) VALUES ('Trinity Capital Inc. 7.875% Notes Due 2029', 'nasdaq', 'TRINI');
@@ -3700,9 +3675,6 @@ INSERT INTO stock(name, market, code) VALUES ('Valley National Bancorp 8.250% Fi
 INSERT INTO stock(name, market, code) VALUES ('Valley National Bancorp 5.50% Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series B', 'nasdaq', 'VLYPO');
 INSERT INTO stock(name, market, code) VALUES ('Valley National Bancorp 6.25% Fixed-to-Floating Rate Non-Cumulative Perpetual Preferred Stock Series A', 'nasdaq', 'VLYPP');
 INSERT INTO stock(name, market, code) VALUES ('Vision Marine Technologies Inc. Common Shares', 'nasdaq', 'VMAR');
-INSERT INTO stock(name, market, code) VALUES ('Valuence Merger Corp. I Class A Ordinary Shares', 'nasdaq', 'VMCA');
-INSERT INTO stock(name, market, code) VALUES ('Valuence Merger Corp. I Unit', 'nasdaq', 'VMCAU');
-INSERT INTO stock(name, market, code) VALUES ('Valuence Merger Corp. I Warrant', 'nasdaq', 'VMCAW');
 INSERT INTO stock(name, market, code) VALUES ('Viemed Healthcare Inc. Common Shares', 'nasdaq', 'VMD');
 INSERT INTO stock(name, market, code) VALUES ('Vimeo Inc. Common Stock', 'nasdaq', 'VMEO');
 INSERT INTO stock(name, market, code) VALUES ('Vanda Pharmaceuticals Inc. Common Stock', 'nasdaq', 'VNDA');
@@ -3757,6 +3729,7 @@ INSERT INTO stock(name, market, code) VALUES ('WaFd Inc. Depositary Shares', 'na
 INSERT INTO stock(name, market, code) VALUES ('Wah Fu Education Group Limited Ordinary Shares', 'nasdaq', 'WAFU');
 INSERT INTO stock(name, market, code) VALUES ('Top KingWin Ltd Class A Ordinary Shares', 'nasdaq', 'WAI');
 INSERT INTO stock(name, market, code) VALUES ('Waldencast plc Class A Ordinary Share', 'nasdaq', 'WALD');
+INSERT INTO stock(name, market, code) VALUES ('Waldencast plc Warrant ', 'nasdaq', 'WALDW');
 INSERT INTO stock(name, market, code) VALUES ('Washington Trust Bancorp Inc. Common Stock', 'nasdaq', 'WASH');
 INSERT INTO stock(name, market, code) VALUES ('Energous Corporation Common Stock', 'nasdaq', 'WATT');
 INSERT INTO stock(name, market, code) VALUES ('Eco Wave Power Global AB (publ) American Depositary Shares', 'nasdaq', 'WAVE');
@@ -3768,12 +3741,12 @@ INSERT INTO stock(name, market, code) VALUES ('WEBTOON Entertainment Inc. Common
 INSERT INTO stock(name, market, code) VALUES ('Wellchange Holdings Company Limited Ordinary shares', 'nasdaq', 'WCT');
 INSERT INTO stock(name, market, code) VALUES ('Workday Inc. Class A Common Stock', 'nasdaq', 'WDAY');
 INSERT INTO stock(name, market, code) VALUES ('Western Digital Corporation Common Stock', 'nasdaq', 'WDC');
-INSERT INTO stock(name, market, code) VALUES ('Western Digital Corporation Common Stock Ex-distribution When-Issued', 'nasdaq', 'WDCVV');
 INSERT INTO stock(name, market, code) VALUES ('WD-40 Company Common Stock', 'nasdaq', 'WDFC');
 INSERT INTO stock(name, market, code) VALUES ('Wendy\'s Company (The) Common Stock', 'nasdaq', 'WEN');
 INSERT INTO stock(name, market, code) VALUES ('Werner Enterprises Inc. Common Stock', 'nasdaq', 'WERN');
 INSERT INTO stock(name, market, code) VALUES ('Westrock Coffee Company Common Stock', 'nasdaq', 'WEST');
 INSERT INTO stock(name, market, code) VALUES ('Wetouch Technology Inc. Common Stock', 'nasdaq', 'WETH');
+INSERT INTO stock(name, market, code) VALUES ('Webus International Limited Ordinary Shares', 'nasdaq', 'WETO');
 INSERT INTO stock(name, market, code) VALUES ('Weyco Group Inc. Common Stock', 'nasdaq', 'WEYS');
 INSERT INTO stock(name, market, code) VALUES ('Where Food Comes From Inc. Common Stock', 'nasdaq', 'WFCF');
 INSERT INTO stock(name, market, code) VALUES ('Weatherford International plc Ordinary Shares', 'nasdaq', 'WFRD');
@@ -3784,6 +3757,7 @@ INSERT INTO stock(name, market, code) VALUES ('WhiteHorse Finance Inc. Common St
 INSERT INTO stock(name, market, code) VALUES ('WhiteHorse Finance Inc. 7.875% Notes due 2028', 'nasdaq', 'WHFCL');
 INSERT INTO stock(name, market, code) VALUES ('Wheeler Real Estate Investment Trust Inc. Common Stock', 'nasdaq', 'WHLR');
 INSERT INTO stock(name, market, code) VALUES ('Wheeler Real Estate Investment Trust Inc. Series D Cumulative Preferred Stock', 'nasdaq', 'WHLRD');
+INSERT INTO stock(name, market, code) VALUES ('Wheeler Real Estate Investment Trust Inc. 7.00% Senior Subordinated Convertible Notes Due 2031', 'nasdaq', 'WHLRL');
 INSERT INTO stock(name, market, code) VALUES ('Wheeler Real Estate Investment Trust Inc. Class B Preferred Stock', 'nasdaq', 'WHLRP');
 INSERT INTO stock(name, market, code) VALUES ('G. Willi-Food International  Ltd. Ordinary Shares', 'nasdaq', 'WILC');
 INSERT INTO stock(name, market, code) VALUES ('WiMi Hologram Cloud Inc. American Depositary Share', 'nasdaq', 'WIMI');
@@ -3792,6 +3766,7 @@ INSERT INTO stock(name, market, code) VALUES ('Wingstop Inc. Common Stock', 'nas
 INSERT INTO stock(name, market, code) VALUES ('Windtree Therapeutics Inc. Common Stock', 'nasdaq', 'WINT');
 INSERT INTO stock(name, market, code) VALUES ('WinVest Acquisition Corp. Common Stock', 'nasdaq', 'WINV');
 INSERT INTO stock(name, market, code) VALUES ('WinVest Acquisition Corp. Right', 'nasdaq', 'WINVR');
+INSERT INTO stock(name, market, code) VALUES ('WinVest Acquisition Corp. Unit', 'nasdaq', 'WINVU');
 INSERT INTO stock(name, market, code) VALUES ('Wix.com Ltd. Ordinary Shares', 'nasdaq', 'WIX');
 INSERT INTO stock(name, market, code) VALUES ('WISeKey International Holding Ltd American Depositary Shares', 'nasdaq', 'WKEY');
 INSERT INTO stock(name, market, code) VALUES ('Workhorse Group Inc. Common Stock', 'nasdaq', 'WKHS');
@@ -3808,7 +3783,7 @@ INSERT INTO stock(name, market, code) VALUES ('Warner Music Group Corp. Class A 
 INSERT INTO stock(name, market, code) VALUES ('William Penn Bancorporation Common Stock', 'nasdaq', 'WMPN');
 INSERT INTO stock(name, market, code) VALUES ('Western New England Bancorp Inc. Common Stock', 'nasdaq', 'WNEB');
 INSERT INTO stock(name, market, code) VALUES ('Meiwu Technology Company Limited Ordinary Shares', 'nasdaq', 'WNW');
-INSERT INTO stock(name, market, code) VALUES ('WORK Medical Technology Group LTD Ordinary Shares', 'nasdaq', 'WOK');
+INSERT INTO stock(name, market, code) VALUES ('WORK Medical Technology Group LTD Class A Ordinary Shares', 'nasdaq', 'WOK');
 INSERT INTO stock(name, market, code) VALUES ('Petco Health and Wellness Company Inc. Class A Common Stock', 'nasdaq', 'WOOF');
 INSERT INTO stock(name, market, code) VALUES ('SCWorx Corp. Common Stock', 'nasdaq', 'WORX');
 INSERT INTO stock(name, market, code) VALUES ('Westport Fuel Systems Inc Common Shares', 'nasdaq', 'WPRT');
@@ -3834,6 +3809,8 @@ INSERT INTO stock(name, market, code) VALUES ('WW International Inc. Common Stoc
 INSERT INTO stock(name, market, code) VALUES ('Woodward Inc. Common Stock', 'nasdaq', 'WWD');
 INSERT INTO stock(name, market, code) VALUES ('Wing Yip Food Holdings Group Limited American Depositary Shares', 'nasdaq', 'WYHG');
 INSERT INTO stock(name, market, code) VALUES ('Wynn Resorts Limited Common stock', 'nasdaq', 'WYNN');
+INSERT INTO stock(name, market, code) VALUES ('Longevity Health Holdings Inc. Common Stock', 'nasdaq', 'XAGE');
+INSERT INTO stock(name, market, code) VALUES ('Longevity Health Holdings Inc. Warrant', 'nasdaq', 'XAGEW');
 INSERT INTO stock(name, market, code) VALUES ('Beyond Air Inc. Common Stock', 'nasdaq', 'XAIR');
 INSERT INTO stock(name, market, code) VALUES ('Xenetic Biosciences Inc. Common Stock', 'nasdaq', 'XBIO');
 INSERT INTO stock(name, market, code) VALUES ('XBiotech Inc. Common Stock', 'nasdaq', 'XBIT');
@@ -3882,8 +3859,6 @@ INSERT INTO stock(name, market, code) VALUES ('Yunji Inc. American Depository Sh
 INSERT INTO stock(name, market, code) VALUES ('Y-mAbs Therapeutics Inc. Common Stock', 'nasdaq', 'YMAB');
 INSERT INTO stock(name, market, code) VALUES ('York Water Company (The) Common Stock', 'nasdaq', 'YORW');
 INSERT INTO stock(name, market, code) VALUES ('Yoshiharu Global Co. Class A Common Stock', 'nasdaq', 'YOSH');
-INSERT INTO stock(name, market, code) VALUES ('Yotta Acquisition Corporation Common Stock', 'nasdaq', 'YOTA');
-INSERT INTO stock(name, market, code) VALUES ('Yotta Acquisition Corporation Right', 'nasdaq', 'YOTAR');
 INSERT INTO stock(name, market, code) VALUES ('Yotta Acquisition Corporation Warrant', 'nasdaq', 'YOTAW');
 INSERT INTO stock(name, market, code) VALUES ('17 Education & Technology Group Inc. American Depositary Shares', 'nasdaq', 'YQ');
 INSERT INTO stock(name, market, code) VALUES ('YSX Tech. Co. Ltd Class A Ordinary Shares', 'nasdaq', 'YSXT');
@@ -3920,7 +3895,6 @@ INSERT INTO stock(name, market, code) VALUES ('Zai Lab Limited American Deposita
 INSERT INTO stock(name, market, code) VALUES ('Zoom Communications Inc. Class A Common Stock', 'nasdaq', 'ZM');
 INSERT INTO stock(name, market, code) VALUES ('Zentalis Pharmaceuticals Inc. Common Stock', 'nasdaq', 'ZNTL');
 INSERT INTO stock(name, market, code) VALUES ('ZOOZ Power Ltd. Ordinary Shares', 'nasdaq', 'ZOOZ');
-INSERT INTO stock(name, market, code) VALUES ('ZOOZ Power Ltd. Warrant', 'nasdaq', 'ZOOZW');
 INSERT INTO stock(name, market, code) VALUES ('Zscaler Inc. Common Stock', 'nasdaq', 'ZS');
 INSERT INTO stock(name, market, code) VALUES ('zSpace Inc. Common stock', 'nasdaq', 'ZSPC');
 INSERT INTO stock(name, market, code) VALUES ('Zentek Ltd. Common Stock', 'nasdaq', 'ZTEK');
@@ -4045,7 +4019,6 @@ INSERT INTO stock(name, market, code) VALUES ('Ally Financial Inc. Common Stock'
 INSERT INTO stock(name, market, code) VALUES ('Allison Transmission Holdings Inc. Common Stock', 'nyse', 'ALSN');
 INSERT INTO stock(name, market, code) VALUES ('Alta Equipment Group Inc. Class A Common Stock', 'nyse', 'ALTG');
 INSERT INTO stock(name, market, code) VALUES ('Alta Equipment Group Inc. Depositary Shares (each representing 1/1000th in a share of 10% Series A Cumulative Perpetual Preferred Stock)', 'nyse', 'ALTG^A');
-INSERT INTO stock(name, market, code) VALUES ('Arcadium Lithium plc Ordinary Shares', 'nyse', 'ALTM');
 INSERT INTO stock(name, market, code) VALUES ('Allurion Technologies Inc. Common Stock', 'nyse', 'ALUR');
 INSERT INTO stock(name, market, code) VALUES ('Autoliv Inc. Common Stock', 'nyse', 'ALV');
 INSERT INTO stock(name, market, code) VALUES ('Alexander\'s Inc. Common Stock', 'nyse', 'ALX');
@@ -4075,7 +4048,6 @@ INSERT INTO stock(name, market, code) VALUES ('America Movil S.A.B. de C.V. Amer
 INSERT INTO stock(name, market, code) VALUES ('AutoNation Inc. Common Stock', 'nyse', 'AN');
 INSERT INTO stock(name, market, code) VALUES ('Arista Networks Inc. Common Stock', 'nyse', 'ANET');
 INSERT INTO stock(name, market, code) VALUES ('Abercrombie & Fitch Company Common Stock', 'nyse', 'ANF');
-INSERT INTO stock(name, market, code) VALUES ('American National Group Inc. Depositary Shares each representing a 1/1000th interest in a share of  5.95% Fixed-Rate Reset Non-Cumulative Preferred Stock Series A', 'nyse', 'ANG^A');
 INSERT INTO stock(name, market, code) VALUES ('American National Group Inc. Depositary Shares each representing a 1/1000th interest in a share of 6.625% Fixed-Rate Reset Non-Cumulative Preferred Stock Series B', 'nyse', 'ANG^B');
 INSERT INTO stock(name, market, code) VALUES ('American National Group Inc. Depositary Shares each representing a 1/1000th interest in a share of 7.375% Fixed-Rate Non-Cumulative Preferred Stock Series D', 'nyse', 'ANG^D');
 INSERT INTO stock(name, market, code) VALUES ('Alto Neuroscience Inc. Common Stock', 'nyse', 'ANRO');
@@ -4243,7 +4215,6 @@ INSERT INTO stock(name, market, code) VALUES ('Brookfield BRP Holdings (Canada) 
 INSERT INTO stock(name, market, code) VALUES ('Brookfield BRP Holdings (Canada) Inc. 4.875% Perpetual Subordinated Notes', 'nyse', 'BEPI');
 INSERT INTO stock(name, market, code) VALUES ('Brookfield BRP Holdings (Canada) Inc. 7.250% Perpetual Subordinated Notes', 'nyse', 'BEPJ');
 INSERT INTO stock(name, market, code) VALUES ('Berry Global Group Inc. Common Stock', 'nyse', 'BERY');
-INSERT INTO stock(name, market, code) VALUES ('BEST Inc. American Depositary Shares each representing twenty (20) Class A Ordinary Shares', 'nyse', 'BEST');
 INSERT INTO stock(name, market, code) VALUES ('Brown Forman Corporation', 'nyse', 'BF/A');
 INSERT INTO stock(name, market, code) VALUES ('Brown Forman Corporation', 'nyse', 'BF/B');
 INSERT INTO stock(name, market, code) VALUES ('Bright Horizons Family Solutions Inc. Common Stock', 'nyse', 'BFAM');
@@ -4433,7 +4404,6 @@ INSERT INTO stock(name, market, code) VALUES ('Clear Channel Outdoor Holdings In
 INSERT INTO stock(name, market, code) VALUES ('CoreCard Corporation Common Stock', 'nyse', 'CCRD');
 INSERT INTO stock(name, market, code) VALUES ('Century Communities Inc. Common Stock', 'nyse', 'CCS');
 INSERT INTO stock(name, market, code) VALUES ('Compania Cervecerias Unidas S.A. Common Stock', 'nyse', 'CCU');
-INSERT INTO stock(name, market, code) VALUES ('Comcast Holdings ZONES', 'nyse', 'CCZ');
 INSERT INTO stock(name, market, code) VALUES ('Coeur Mining Inc. Common Stock', 'nyse', 'CDE');
 INSERT INTO stock(name, market, code) VALUES ('Cadeler A/S American Depositary Share (each representing four (4) Ordinary Shares)', 'nyse', 'CDLR');
 INSERT INTO stock(name, market, code) VALUES ('COPT Defense Properties Common Shares of Beneficial Interest', 'nyse', 'CDP');
@@ -4584,6 +4554,7 @@ INSERT INTO stock(name, market, code) VALUES ('EIDP Inc. Preferred Stock $3.50 S
 INSERT INTO stock(name, market, code) VALUES ('EIDP Inc. Preferred Stock $4.50 Series', 'nyse', 'CTA^B');
 INSERT INTO stock(name, market, code) VALUES ('Qwest Corporation 6.5% Notes due 2056', 'nyse', 'CTBB');
 INSERT INTO stock(name, market, code) VALUES ('Qwest Corporation 6.75% Notes due 2057', 'nyse', 'CTDD');
+INSERT INTO stock(name, market, code) VALUES ('Claritev Corporation Class A Common Stock', 'nyse', 'CTEV');
 INSERT INTO stock(name, market, code) VALUES ('CTO Realty Growth Inc. Common Stock', 'nyse', 'CTO');
 INSERT INTO stock(name, market, code) VALUES ('CTO Realty Growth Inc. 6.375% Series A Cumulative Redeemable Preferred Stock', 'nyse', 'CTO^A');
 INSERT INTO stock(name, market, code) VALUES ('Custom Truck One Source Inc. Common Stock', 'nyse', 'CTOS');
@@ -4953,7 +4924,6 @@ INSERT INTO stock(name, market, code) VALUES ('Five Point Holdings LLC Class A C
 INSERT INTO stock(name, market, code) VALUES ('Farmland Partners Inc. Common Stock', 'nyse', 'FPI');
 INSERT INTO stock(name, market, code) VALUES ('First Industrial Realty Trust Inc. Common Stock', 'nyse', 'FR');
 INSERT INTO stock(name, market, code) VALUES ('Blackrock Floating Rate Income Strategies Fund Inc  Common Stock', 'nyse', 'FRA');
-INSERT INTO stock(name, market, code) VALUES ('FREYR Battery Inc. Common Stock', 'nyse', 'FREY');
 INSERT INTO stock(name, market, code) VALUES ('Forge Global Holdings Inc. Common Stock', 'nyse', 'FRGE');
 INSERT INTO stock(name, market, code) VALUES ('Frontline Plc Ordinary Shares', 'nyse', 'FRO');
 INSERT INTO stock(name, market, code) VALUES ('Federal Realty Investment Trust Common Stock', 'nyse', 'FRT');
@@ -5183,8 +5153,8 @@ INSERT INTO stock(name, market, code) VALUES ('Heritage Insurance Holdings Inc. 
 INSERT INTO stock(name, market, code) VALUES ('HSBC Holdings plc. Common Stock', 'nyse', 'HSBC');
 INSERT INTO stock(name, market, code) VALUES ('Himalaya Shipping Ltd. Common Shares', 'nyse', 'HSHP');
 INSERT INTO stock(name, market, code) VALUES ('The Hershey Company Common Stock', 'nyse', 'HSY');
+INSERT INTO stock(name, market, code) VALUES ('HomeTrust Bancshares Inc. Common Stock', 'nyse', 'HTB');
 INSERT INTO stock(name, market, code) VALUES ('John Hancock Tax Advantaged Dividend Income Fund Common Shares of Beneficial Interest', 'nyse', 'HTD');
-INSERT INTO stock(name, market, code) VALUES ('Horizon Technology Finance Corporation 4.875% Notes due 2026', 'nyse', 'HTFB');
 INSERT INTO stock(name, market, code) VALUES ('Horizon Technology Finance Corporation 6.25% Notes due 2027', 'nyse', 'HTFC');
 INSERT INTO stock(name, market, code) VALUES ('Hercules Capital Inc. Common Stock', 'nyse', 'HTGC');
 INSERT INTO stock(name, market, code) VALUES ('Hilltop Holdings Inc.', 'nyse', 'HTH');
@@ -5267,7 +5237,7 @@ INSERT INTO stock(name, market, code) VALUES ('INVESCO MORTGAGE CAPITAL INC Comm
 INSERT INTO stock(name, market, code) VALUES ('INVESCO MORTGAGE CAPITAL INC 7.5% Fixed-to-Floating Series C Cumulative Redeemable Preferred Stock Liquation Preference $25.00 per Share', 'nyse', 'IVR^C');
 INSERT INTO stock(name, market, code) VALUES ('InvenTrust Properties Corp. Common Stock', 'nyse', 'IVT');
 INSERT INTO stock(name, market, code) VALUES ('Invesco Ltd Common Stock', 'nyse', 'IVZ');
-INSERT INTO stock(name, market, code) VALUES ('Orix Corp Ads Common Stock', 'nyse', 'IX');
+INSERT INTO stock(name, market, code) VALUES ('ORIX Corporation American Depositary Shares', 'nyse', 'IX');
 INSERT INTO stock(name, market, code) VALUES ('Jacobs Solutions Inc. Common Stock', 'nyse', 'J');
 INSERT INTO stock(name, market, code) VALUES ('Jackson Acquisition Company II Class A Ordinary Shares', 'nyse', 'JACS');
 INSERT INTO stock(name, market, code) VALUES ('JBG SMITH Properties Common Shares ', 'nyse', 'JBGS');
@@ -5408,7 +5378,6 @@ INSERT INTO stock(name, market, code) VALUES ('Lument Finance Trust Inc. 7.875% 
 INSERT INTO stock(name, market, code) VALUES ('Lazard Global Total Return and Income Fund Common Stock', 'nyse', 'LGI');
 INSERT INTO stock(name, market, code) VALUES ('Labcorp Holdings Inc. Common Stock', 'nyse', 'LH');
 INSERT INTO stock(name, market, code) VALUES ('L3Harris Technologies Inc. Common Stock', 'nyse', 'LHX');
-INSERT INTO stock(name, market, code) VALUES ('Li-Cycle Holdings Corp. Common Shares', 'nyse', 'LICY');
 INSERT INTO stock(name, market, code) VALUES ('Lennox International Inc. Common Stock', 'nyse', 'LII');
 INSERT INTO stock(name, market, code) VALUES ('LightInTheBox Holding Co. Ltd. American Depositary Shares each representing twelve ordinary shares', 'nyse', 'LITB');
 INSERT INTO stock(name, market, code) VALUES ('Eli Lilly and Company Common Stock', 'nyse', 'LLY');
@@ -5551,7 +5520,6 @@ INSERT INTO stock(name, market, code) VALUES ('Movado Group Inc. Common Stock', 
 INSERT INTO stock(name, market, code) VALUES ('MP Materials Corp. Common Stock', 'nyse', 'MP');
 INSERT INTO stock(name, market, code) VALUES ('Blackrock MuniYield Pennsylvania Quality Fund Common Stock', 'nyse', 'MPA');
 INSERT INTO stock(name, market, code) VALUES ('Marathon Petroleum Corporation Common Stock', 'nyse', 'MPC');
-INSERT INTO stock(name, market, code) VALUES ('MultiPlan Corporation Class A Common Stock', 'nyse', 'MPLN');
 INSERT INTO stock(name, market, code) VALUES ('MPLX LP Common Units Representing Limited Partner Interests', 'nyse', 'MPLX');
 INSERT INTO stock(name, market, code) VALUES ('Barings Participation Investors Common Stock', 'nyse', 'MPV');
 INSERT INTO stock(name, market, code) VALUES ('Medical Properties Trust Inc. common stock', 'nyse', 'MPW');
@@ -5915,7 +5883,6 @@ INSERT INTO stock(name, market, code) VALUES ('PIMCO New York Municipal Income F
 INSERT INTO stock(name, market, code) VALUES ('Pimco New York Municipal Income Fund II Common Shares of Beneficial Interest', 'nyse', 'PNI');
 INSERT INTO stock(name, market, code) VALUES ('PennantPark Investment Corporation Common Stock', 'nyse', 'PNNT');
 INSERT INTO stock(name, market, code) VALUES ('Pentair plc. Ordinary Share', 'nyse', 'PNR');
-INSERT INTO stock(name, market, code) VALUES ('Pinstripes Holdings Inc. Class A Common Stock', 'nyse', 'PNST');
 INSERT INTO stock(name, market, code) VALUES ('Pinnacle West Capital Corporation Common Stock', 'nyse', 'PNW');
 INSERT INTO stock(name, market, code) VALUES ('Portland General Electric Co Common Stock', 'nyse', 'POR');
 INSERT INTO stock(name, market, code) VALUES ('Post Holdings Inc. Common Stock', 'nyse', 'POST');
@@ -6118,7 +6085,6 @@ INSERT INTO stock(name, market, code) VALUES ('Saratoga Investment Corp 8.50% No
 INSERT INTO stock(name, market, code) VALUES ('Safe Bulkers Inc Common Stock ($0.001 par value)', 'nyse', 'SB');
 INSERT INTO stock(name, market, code) VALUES ('Safe Bulkers Inc Cumulative Redeemable Perpetual Preferred Series C (Marshall Islands)', 'nyse', 'SB^C');
 INSERT INTO stock(name, market, code) VALUES ('Safe Bulkers Inc Perpetual Preferred Series D (Marshall Islands)', 'nyse', 'SB^D');
-INSERT INTO stock(name, market, code) VALUES ('Scorpio Tankers Inc. 7.00% Senior Notes due 2025', 'nyse', 'SBBA');
 INSERT INTO stock(name, market, code) VALUES ('Sally Beauty Holdings Inc. (Name to be changed from Sally Holdings Inc.) Common Stock', 'nyse', 'SBH');
 INSERT INTO stock(name, market, code) VALUES ('Western Asset Intermediate Muni Fund Inc Common Stock', 'nyse', 'SBI');
 INSERT INTO stock(name, market, code) VALUES ('Sabine Royalty Trust Common Stock', 'nyse', 'SBR');
@@ -6202,6 +6168,8 @@ INSERT INTO stock(name, market, code) VALUES ('Summit Midstream Corporation Comm
 INSERT INTO stock(name, market, code) VALUES ('Sumitomo Mitsui Financial Group Inc Unsponsored American Depositary Shares (Japan)', 'nyse', 'SMFG');
 INSERT INTO stock(name, market, code) VALUES ('Scotts Miracle-Gro Company (The) Common Stock', 'nyse', 'SMG');
 INSERT INTO stock(name, market, code) VALUES ('SEACOR Marine Holdings Inc. Common Stock ', 'nyse', 'SMHI');
+INSERT INTO stock(name, market, code) VALUES ('NuScale Power Corporation Class A Common Stock', 'nyse', 'SMR');
+INSERT INTO stock(name, market, code) VALUES ('SmartRent Inc. Class A Common Stock', 'nyse', 'SMRT');
 INSERT INTO stock(name, market, code) VALUES ('Similarweb Ltd. Ordinary Shares', 'nyse', 'SMWB');
 INSERT INTO stock(name, market, code) VALUES ('SharkNinja Inc. Ordinary Shares', 'nyse', 'SN');
 INSERT INTO stock(name, market, code) VALUES ('Snap-On Incorporated Common Stock', 'nyse', 'SNA');
@@ -6327,6 +6295,7 @@ INSERT INTO stock(name, market, code) VALUES ('Telephone and Data Systems Inc. D
 INSERT INTO stock(name, market, code) VALUES ('Telephone and Data Systems Inc. Depositary Shares Each Representing a 1/1000th Interest in a 6.000% Series VV Cumulative Redeemable Perpetual Preferred Stock', 'nyse', 'TDS^V');
 INSERT INTO stock(name, market, code) VALUES ('Tidewater Inc. Common Stock', 'nyse', 'TDW');
 INSERT INTO stock(name, market, code) VALUES ('Teledyne Technologies Incorporated Common Stock', 'nyse', 'TDY');
+INSERT INTO stock(name, market, code) VALUES ('T1 Energy Inc. Common Stock', 'nyse', 'TE');
 INSERT INTO stock(name, market, code) VALUES ('Tortoise Sustainable and Social Impact Term Fund Common shares of beneficial interest', 'nyse', 'TEAF');
 INSERT INTO stock(name, market, code) VALUES ('Teck Resources Ltd Ordinary Shares', 'nyse', 'TECK');
 INSERT INTO stock(name, market, code) VALUES ('Telefonica SA Common Stock', 'nyse', 'TEF');
@@ -6391,7 +6360,6 @@ INSERT INTO stock(name, market, code) VALUES ('ReposiTrak Inc. Common Stock', 'n
 INSERT INTO stock(name, market, code) VALUES ('Tejon Ranch Co Common Stock', 'nyse', 'TRC');
 INSERT INTO stock(name, market, code) VALUES ('Trex Company Inc. Common Stock', 'nyse', 'TREX');
 INSERT INTO stock(name, market, code) VALUES ('Targa Resources Inc. Common Stock', 'nyse', 'TRGP');
-INSERT INTO stock(name, market, code) VALUES ('Thomson Reuters Corp Common Shares', 'nyse', 'TRI');
 INSERT INTO stock(name, market, code) VALUES ('Trinity Industries Inc. Common Stock', 'nyse', 'TRN');
 INSERT INTO stock(name, market, code) VALUES ('Terreno Realty Corporation Common Stock', 'nyse', 'TRNO');
 INSERT INTO stock(name, market, code) VALUES ('Tronox Holdings plc Ordinary Shares (UK)', 'nyse', 'TROX');
@@ -6675,7 +6643,7 @@ INSERT INTO stock(name, market, code) VALUES ('Zevia PBC Class A Common Stock', 
 INSERT INTO stock(name, market, code) VALUES ('Zurn Elkay Water Solutions Corporation Common Stock', 'nyse', 'ZWS');
 INSERT INTO stock(name, market, code) VALUES ('ACCESS Newswire Inc. Common Stock', 'amex', 'ACCS');
 INSERT INTO stock(name, market, code) VALUES ('Acme United Corporation. Common Stock', 'amex', 'ACU');
-INSERT INTO stock(name, market, code) VALUES ('abrdn Emerging Markets Equity Income Fund Inc. Common Stock', 'amex', 'AEF');
+INSERT INTO stock(name, market, code) VALUES ('abrdn Emerging Markets ex-China Fund Inc. Common Stock', 'amex', 'AEF');
 INSERT INTO stock(name, market, code) VALUES ('AEON Biopharma Inc. Class A Common Stock', 'amex', 'AEON');
 INSERT INTO stock(name, market, code) VALUES ('AIM ImmunoTech Inc. Common Stock', 'amex', 'AIM');
 INSERT INTO stock(name, market, code) VALUES ('Air Industries Group Common Stock', 'amex', 'AIRI');
@@ -6739,6 +6707,7 @@ INSERT INTO stock(name, market, code) VALUES ('DDC Enterprise Limited Class A Or
 INSERT INTO stock(name, market, code) VALUES ('Credit Suisse High Yield Bond Fund Common Stock', 'amex', 'DHY');
 INSERT INTO stock(name, market, code) VALUES ('AMCON Distributing Company Common Stock', 'amex', 'DIT');
 INSERT INTO stock(name, market, code) VALUES ('BNY Mellon Municipal Income Inc. Common Stock', 'amex', 'DMF');
+INSERT INTO stock(name, market, code) VALUES ('dMY Squared Technology Group Inc. Class A Common Stock', 'amex', 'DMYY');
 INSERT INTO stock(name, market, code) VALUES ('Denison Mines Corp Ordinary Shares (Canada)', 'amex', 'DNN');
 INSERT INTO stock(name, market, code) VALUES ('DSS Inc. Common Stock', 'amex', 'DSS');
 INSERT INTO stock(name, market, code) VALUES ('Eason Technology Limited American Depositary Shares (each representing sixty-thousand (60000) Ordinary Shares)', 'amex', 'DXF');
@@ -6782,7 +6751,6 @@ INSERT INTO stock(name, market, code) VALUES ('GoldMining Inc. Common Shares', '
 INSERT INTO stock(name, market, code) VALUES ('Clough Global Opportunities Fund Common Stock', 'amex', 'GLO');
 INSERT INTO stock(name, market, code) VALUES ('Clough Global Equity Fund Clough Global Equity Fund Common Shares of Beneficial Interest', 'amex', 'GLQ');
 INSERT INTO stock(name, market, code) VALUES ('Gabelli Global Utility Common Shares of Beneficial Ownership', 'amex', 'GLU');
-INSERT INTO stock(name, market, code) VALUES ('The Gabelli Global Utility and Income Trust Series A Cumulative Puttable and Callable Preferred Shares', 'amex', 'GLU^A');
 INSERT INTO stock(name, market, code) VALUES ('The Gabelli Global Utility and Income Trust Series B Cumulative Puttable and Callable Preferred Shares', 'amex', 'GLU^B');
 INSERT INTO stock(name, market, code) VALUES ('Clough Global Dividend and Income Fund Common Shares of beneficial interest', 'amex', 'GLV');
 INSERT INTO stock(name, market, code) VALUES ('Genius Group Limited Ordinary Shares', 'amex', 'GNS');
@@ -6802,7 +6770,6 @@ INSERT INTO stock(name, market, code) VALUES ('Howmet Aerospace Inc. $3.75 Prefe
 INSERT INTO stock(name, market, code) VALUES ('Hyliion Holdings Corp. Class A Common Stock', 'amex', 'HYLN');
 INSERT INTO stock(name, market, code) VALUES ('abrdn Australia Equity Fund Inc. Common Stock', 'amex', 'IAF');
 INSERT INTO stock(name, market, code) VALUES ('i-80 Gold Corp. Common Shares', 'amex', 'IAUX');
-INSERT INTO stock(name, market, code) VALUES ('iBio Inc. Common Stock', 'amex', 'IBIO');
 INSERT INTO stock(name, market, code) VALUES ('Impact BioMedical Inc. Common Stock', 'amex', 'IBO');
 INSERT INTO stock(name, market, code) VALUES ('Idaho Strategic Resources Inc. Common Stock', 'amex', 'IDR');
 INSERT INTO stock(name, market, code) VALUES ('Ivanhoe Electric Inc. Common Stock', 'amex', 'IE');
@@ -6819,6 +6786,7 @@ INSERT INTO stock(name, market, code) VALUES ('IT Tech Packaging Inc. Common Sto
 INSERT INTO stock(name, market, code) VALUES ('Integra Resources Corp. Common Shares', 'amex', 'ITRG');
 INSERT INTO stock(name, market, code) VALUES ('GEE Group Inc. Common Stock', 'amex', 'JOB');
 INSERT INTO stock(name, market, code) VALUES ('Kairos Pharma Ltd. Common Stock', 'amex', 'KAPA');
+INSERT INTO stock(name, market, code) VALUES ('Know Labs Inc. Common Stock', 'amex', 'KNW');
 INSERT INTO stock(name, market, code) VALUES ('KULR Technology Group Inc. Common Stock', 'amex', 'KULR');
 INSERT INTO stock(name, market, code) VALUES ('Lineage Cell Therapeutics Inc. Common Stock', 'amex', 'LCTX');
 INSERT INTO stock(name, market, code) VALUES ('Legato Merger Corp. III Ordinary Shares', 'amex', 'LEGT');
@@ -6828,9 +6796,11 @@ INSERT INTO stock(name, market, code) VALUES ('LGL Group Inc. (The) Common Stock
 INSERT INTO stock(name, market, code) VALUES ('Comstock Inc. Common Stock', 'amex', 'LODE');
 INSERT INTO stock(name, market, code) VALUES ('Logistic Properties of the Americas Ordinary Shares', 'amex', 'LPA');
 INSERT INTO stock(name, market, code) VALUES ('Laird Superfood Inc. Common Stock', 'amex', 'LSF');
+INSERT INTO stock(name, market, code) VALUES ('Luda Technology Group Limited Ordinary Shares', 'amex', 'LUD');
 INSERT INTO stock(name, market, code) VALUES ('Luxfer Holdings PLC Ordinary Shares', 'amex', 'LXFR');
 INSERT INTO stock(name, market, code) VALUES ('MAG Silver Corporation Ordinary Shares', 'amex', 'MAG');
 INSERT INTO stock(name, market, code) VALUES ('MAIA Biotechnology Inc. Common Stock', 'amex', 'MAIA');
+INSERT INTO stock(name, market, code) VALUES ('Micropolis Holding Company Ordinary Shares', 'amex', 'MCRP');
 INSERT INTO stock(name, market, code) VALUES ('The Marygold Companies Inc. Common Stock', 'amex', 'MGLD');
 INSERT INTO stock(name, market, code) VALUES ('Mastech Digital Inc Common Stock', 'amex', 'MHH');
 INSERT INTO stock(name, market, code) VALUES ('NFT Limited Class A Ordinary Share', 'amex', 'MI');
@@ -6879,7 +6849,6 @@ INSERT INTO stock(name, market, code) VALUES ('Pacific Gas & Electric Co. 5% 1st
 INSERT INTO stock(name, market, code) VALUES ('Pacific Gas & Electric Co. 5% 1st A Preferred Stock', 'amex', 'PCG^E');
 INSERT INTO stock(name, market, code) VALUES ('Pacific Gas & Electric Co. 4.80% 1st Preferred Stock', 'amex', 'PCG^G');
 INSERT INTO stock(name, market, code) VALUES ('Pacific Gas & Electric Co. 4.50% 1st Preferred Stock', 'amex', 'PCG^H');
-INSERT INTO stock(name, market, code) VALUES ('Pacific Gas & Electric Co. 4.36% 1st Preferred Stock', 'amex', 'PCG^I');
 INSERT INTO stock(name, market, code) VALUES ('Pedevco Corp. Common Stock', 'amex', 'PED');
 INSERT INTO stock(name, market, code) VALUES ('BiomX Inc. COmmon Stock', 'amex', 'PHGE');
 INSERT INTO stock(name, market, code) VALUES ('Planet Green Holdings Corp. Common Stock', 'amex', 'PLAG');
@@ -6962,5 +6931,5 @@ INSERT INTO stock(name, market, code) VALUES ('Xtant Medical Holdings Inc. Commo
 INSERT INTO stock(name, market, code) VALUES ('cbdMD Inc. Common Stock', 'amex', 'YCBD');
 INSERT INTO stock(name, market, code) VALUES ('cbdMD Inc. 8.0% Series A Cumulative Convertible Preferred Stock', 'amex', 'YCBD^A');
 INSERT INTO stock(name, market, code) VALUES ('Zedge Inc. Class B Common Stock ', 'amex', 'ZDGE');
-INSERT INTO stock(name, market, code) VALUES ('Zomedica Corp. Common Shares', 'amex', 'ZOM');
 INSERT INTO stock(name, market, code) VALUES ('CleanCore Solutions Inc. Class B Common Stock', 'amex', 'ZONE');
+COMMIT;

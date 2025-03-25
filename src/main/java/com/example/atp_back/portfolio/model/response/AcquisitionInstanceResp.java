@@ -43,6 +43,7 @@ public class AcquisitionInstanceResp {
                 .orderAt(acquisition.getOrderAt())
                 .stockCode(acquisition.getStock().getCode())
                 .stockName(acquisition.getStock().getName())
+                .stockCode(acquisition.getStock().getCode())
                 .build();
     }
 }
